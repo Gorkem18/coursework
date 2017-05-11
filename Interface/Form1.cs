@@ -181,7 +181,7 @@ namespace Interface
 
         private void інформаціяПроРозробникаToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("ITS ILLIA TANASYUK BITCH!");
+            MessageBox.Show("Розробив студент групи КН-14 Танасюк Ілля Курсова робота з СТУБД");
         }
     }
 }
