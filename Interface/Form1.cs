@@ -178,5 +178,10 @@ namespace Interface
             pnl_Search.Hide();
             pnl_MainMenu.Show();
         }
+
+        private void інформаціяПроРозробникаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("ITS ILLIA TANASYUK BITCH!");
+        }
     }
 }

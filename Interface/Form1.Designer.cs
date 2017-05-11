@@ -417,6 +417,7 @@
             this.інформаціяПроРозробникаToolStripMenuItem.Name = "інформаціяПроРозробникаToolStripMenuItem";
             this.інформаціяПроРозробникаToolStripMenuItem.Size = new System.Drawing.Size(286, 26);
             this.інформаціяПроРозробникаToolStripMenuItem.Text = "Інформація про розробника";
+            this.інформаціяПроРозробникаToolStripMenuItem.Click += new System.EventHandler(this.інформаціяПроРозробникаToolStripMenuItem_Click);
             // 
             // tmr_Timer
             // 
