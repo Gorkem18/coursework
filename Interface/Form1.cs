@@ -16,11 +16,11 @@ namespace Interface
             tmr_ClearStatus.Interval = 10000;
             tmr_Timer.Interval = 1000;
             tmr_Timer.Enabled = true;
-            pnl_AddPosition.Hide();
-            pnl_ShowReports.Hide();
+            //pnl_AddPosition.Hide();
+            //pnl_ShowReports.Hide();
             pnl_AddWorker.Hide();
             pnl_MainMenu.Hide();
-            pnl_Search.Hide();
+            //pnl_Search.Hide();
             pnl_Authorization.Show();
 
         }
@@ -135,53 +135,21 @@ namespace Interface
             DBconnect();
         }
 
-        private void btn_AddWorker_Click(object sender, EventArgs e)
-        {
-            pnl_AddWorker.Show();
-        }
-
-        private void btn_ShowReports_Click(object sender, EventArgs e)
-        {
-            pnl_ShowReports.Show();
-        }
-
-        private void btn_AddPosition_Click(object sender, EventArgs e)
-        {
-            pnl_AddPosition.Show();
-        }
-
-        private void btn_Search_Click(object sender, EventArgs e)
-        {
-            pnl_Search.Show();
-        }
-
         private void btn_Back2Main_Click(object sender, EventArgs e)
         {
             pnl_AddWorker.Hide();
             pnl_MainMenu.Show();
         }
 
-        private void btn_Back2MainSR_Click(object sender, EventArgs e)
-        {
-            pnl_ShowReports.Hide();
-            pnl_MainMenu.Show();
-        }
-
-        private void btn_Back2MainAP_Click(object sender, EventArgs e)
-        {
-            pnl_AddPosition.Hide();
-            pnl_MainMenu.Show();
-        }
-
-        private void btn_Back2MainS_Click(object sender, EventArgs e)
-        {
-            pnl_Search.Hide();
-            pnl_MainMenu.Show();
-        }
-
         private void інформаціяПроРозробникаToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Розробив студент групи КН-14 Танасюк Ілля Курсова робота з СТУБД");
+        }
+
+        private void btn_AddWorker_Click(object sender, EventArgs e)
+        {
+            pnl_MainMenu.Hide();
+            pnl_AddWorker.Show();
         }
     }
 }
