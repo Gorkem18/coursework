@@ -32,10 +32,36 @@
             this.pnl_Authorization = new System.Windows.Forms.Panel();
             this.pnl_MainMenu = new System.Windows.Forms.Panel();
             this.pnl_AddWorker = new System.Windows.Forms.Panel();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.btn_AddWorkerAccept = new System.Windows.Forms.Button();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.pnl_Search = new System.Windows.Forms.Panel();
+            this.pnl_AddPosition = new System.Windows.Forms.Panel();
+            this.btn_Back2MainAP = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.btn_Back2MainS = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.btn_Back2Main = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.pnl_ShowReports = new System.Windows.Forms.Panel();
+            this.btn_Back2MainSR = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.btn_Search = new System.Windows.Forms.Button();
             this.lbl_Date = new System.Windows.Forms.Label();
             this.lbl_Time = new System.Windows.Forms.Label();
             this.lbl_Notification = new System.Windows.Forms.Label();
@@ -62,32 +88,16 @@
             this.інформаціяПроКористувачаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.інформаціяПроРозробникаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tmr_Timer = new System.Windows.Forms.Timer(this.components);
-            this.pnl_ShowReports = new System.Windows.Forms.Panel();
-            this.btn_Back2MainSR = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.pnl_AddPosition = new System.Windows.Forms.Panel();
-            this.btn_Back2MainAP = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.btn_Search = new System.Windows.Forms.Button();
-            this.pnl_Search = new System.Windows.Forms.Panel();
-            this.btn_Back2MainS = new System.Windows.Forms.Button();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.pnl_Authorization.SuspendLayout();
             this.pnl_MainMenu.SuspendLayout();
             this.pnl_AddWorker.SuspendLayout();
+            this.pnl_Search.SuspendLayout();
+            this.pnl_AddPosition.SuspendLayout();
+            this.pnl_ShowReports.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.ss_StatusStrip.SuspendLayout();
             this.ss_ConnectStrip.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            this.pnl_ShowReports.SuspendLayout();
-            this.pnl_AddPosition.SuspendLayout();
-            this.pnl_Search.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnl_Authorization
@@ -108,7 +118,6 @@
             // pnl_MainMenu
             // 
             this.pnl_MainMenu.BackColor = System.Drawing.Color.Honeydew;
-            this.pnl_MainMenu.Controls.Add(this.pnl_Search);
             this.pnl_MainMenu.Controls.Add(this.pnl_AddWorker);
             this.pnl_MainMenu.Controls.Add(this.pnl_ShowReports);
             this.pnl_MainMenu.Controls.Add(this.btn_Search);
@@ -126,6 +135,17 @@
             // pnl_AddWorker
             // 
             this.pnl_AddWorker.BackColor = System.Drawing.Color.Honeydew;
+            this.pnl_AddWorker.Controls.Add(this.label18);
+            this.pnl_AddWorker.Controls.Add(this.label17);
+            this.pnl_AddWorker.Controls.Add(this.label16);
+            this.pnl_AddWorker.Controls.Add(this.label15);
+            this.pnl_AddWorker.Controls.Add(this.btn_AddWorkerAccept);
+            this.pnl_AddWorker.Controls.Add(this.radioButton1);
+            this.pnl_AddWorker.Controls.Add(this.dateTimePicker1);
+            this.pnl_AddWorker.Controls.Add(this.textBox3);
+            this.pnl_AddWorker.Controls.Add(this.textBox2);
+            this.pnl_AddWorker.Controls.Add(this.textBox1);
+            this.pnl_AddWorker.Controls.Add(this.pnl_Search);
             this.pnl_AddWorker.Controls.Add(this.btn_Back2Main);
             this.pnl_AddWorker.Controls.Add(this.label3);
             this.pnl_AddWorker.Controls.Add(this.label4);
@@ -134,6 +154,211 @@
             this.pnl_AddWorker.Name = "pnl_AddWorker";
             this.pnl_AddWorker.Size = new System.Drawing.Size(638, 382);
             this.pnl_AddWorker.TabIndex = 7;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label18.Location = new System.Drawing.Point(89, 183);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(219, 29);
+            this.label18.TabIndex = 20;
+            this.label18.Text = "Дата народження";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label17.Location = new System.Drawing.Point(89, 132);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(149, 29);
+            this.label17.TabIndex = 19;
+            this.label17.Text = "По-батькові";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label16.Location = new System.Drawing.Point(89, 86);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(55, 29);
+            this.label16.TabIndex = 18;
+            this.label16.Text = "Ім\'я";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label15.Location = new System.Drawing.Point(89, 34);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(125, 29);
+            this.label15.TabIndex = 17;
+            this.label15.Text = "Прізвище";
+            // 
+            // btn_AddWorkerAccept
+            // 
+            this.btn_AddWorkerAccept.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn_AddWorkerAccept.Location = new System.Drawing.Point(161, 297);
+            this.btn_AddWorkerAccept.Name = "btn_AddWorkerAccept";
+            this.btn_AddWorkerAccept.Size = new System.Drawing.Size(278, 49);
+            this.btn_AddWorkerAccept.TabIndex = 16;
+            this.btn_AddWorkerAccept.Text = "Додати працівника";
+            this.btn_AddWorkerAccept.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.radioButton1.Location = new System.Drawing.Point(94, 234);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(174, 33);
+            this.radioButton1.TabIndex = 15;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Вища освіта";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dateTimePicker1.Location = new System.Drawing.Point(336, 178);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(251, 34);
+            this.dateTimePicker1.TabIndex = 14;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox3.Location = new System.Drawing.Point(299, 127);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(151, 34);
+            this.textBox3.TabIndex = 13;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox2.Location = new System.Drawing.Point(299, 29);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(151, 34);
+            this.textBox2.TabIndex = 12;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox1.Location = new System.Drawing.Point(299, 81);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(151, 34);
+            this.textBox1.TabIndex = 11;
+            // 
+            // pnl_Search
+            // 
+            this.pnl_Search.BackColor = System.Drawing.Color.Honeydew;
+            this.pnl_Search.Controls.Add(this.pnl_AddPosition);
+            this.pnl_Search.Controls.Add(this.btn_Back2MainS);
+            this.pnl_Search.Controls.Add(this.label12);
+            this.pnl_Search.Controls.Add(this.label13);
+            this.pnl_Search.Controls.Add(this.label14);
+            this.pnl_Search.Location = new System.Drawing.Point(593, 161);
+            this.pnl_Search.Name = "pnl_Search";
+            this.pnl_Search.Size = new System.Drawing.Size(638, 382);
+            this.pnl_Search.TabIndex = 10;
+            // 
+            // pnl_AddPosition
+            // 
+            this.pnl_AddPosition.BackColor = System.Drawing.Color.Honeydew;
+            this.pnl_AddPosition.Controls.Add(this.btn_Back2MainAP);
+            this.pnl_AddPosition.Controls.Add(this.label9);
+            this.pnl_AddPosition.Controls.Add(this.label10);
+            this.pnl_AddPosition.Controls.Add(this.label11);
+            this.pnl_AddPosition.Location = new System.Drawing.Point(614, 9);
+            this.pnl_AddPosition.Name = "pnl_AddPosition";
+            this.pnl_AddPosition.Size = new System.Drawing.Size(632, 379);
+            this.pnl_AddPosition.TabIndex = 9;
+            // 
+            // btn_Back2MainAP
+            // 
+            this.btn_Back2MainAP.BackColor = System.Drawing.Color.Honeydew;
+            this.btn_Back2MainAP.FlatAppearance.BorderColor = System.Drawing.Color.Honeydew;
+            this.btn_Back2MainAP.FlatAppearance.BorderSize = 0;
+            this.btn_Back2MainAP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Back2MainAP.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.btn_Back2MainAP.Location = new System.Drawing.Point(9, 10);
+            this.btn_Back2MainAP.Name = "btn_Back2MainAP";
+            this.btn_Back2MainAP.Size = new System.Drawing.Size(25, 25);
+            this.btn_Back2MainAP.TabIndex = 6;
+            this.btn_Back2MainAP.Text = "←";
+            this.btn_Back2MainAP.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_Back2MainAP.UseVisualStyleBackColor = false;
+            this.btn_Back2MainAP.Click += new System.EventHandler(this.btn_Back2MainAP_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label9.Location = new System.Drawing.Point(12, 197);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(0, 55);
+            this.label9.TabIndex = 5;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label10.Location = new System.Drawing.Point(38, 86);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(0, 55);
+            this.label10.TabIndex = 4;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label11.Location = new System.Drawing.Point(520, 10);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(0, 32);
+            this.label11.TabIndex = 3;
+            // 
+            // btn_Back2MainS
+            // 
+            this.btn_Back2MainS.BackColor = System.Drawing.Color.Honeydew;
+            this.btn_Back2MainS.FlatAppearance.BorderColor = System.Drawing.Color.Honeydew;
+            this.btn_Back2MainS.FlatAppearance.BorderSize = 0;
+            this.btn_Back2MainS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Back2MainS.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.btn_Back2MainS.Location = new System.Drawing.Point(9, 10);
+            this.btn_Back2MainS.Name = "btn_Back2MainS";
+            this.btn_Back2MainS.Size = new System.Drawing.Size(25, 25);
+            this.btn_Back2MainS.TabIndex = 6;
+            this.btn_Back2MainS.Text = "←";
+            this.btn_Back2MainS.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_Back2MainS.UseVisualStyleBackColor = false;
+            this.btn_Back2MainS.Click += new System.EventHandler(this.btn_Back2MainS_Click);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label12.Location = new System.Drawing.Point(12, 197);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(0, 55);
+            this.label12.TabIndex = 5;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label13.Location = new System.Drawing.Point(38, 86);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(0, 55);
+            this.label13.TabIndex = 4;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label14.Location = new System.Drawing.Point(520, 10);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(0, 32);
+            this.label14.TabIndex = 3;
             // 
             // btn_Back2Main
             // 
@@ -177,6 +402,73 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(0, 32);
             this.label5.TabIndex = 3;
+            // 
+            // pnl_ShowReports
+            // 
+            this.pnl_ShowReports.BackColor = System.Drawing.Color.Honeydew;
+            this.pnl_ShowReports.Controls.Add(this.btn_Back2MainSR);
+            this.pnl_ShowReports.Controls.Add(this.label6);
+            this.pnl_ShowReports.Controls.Add(this.label7);
+            this.pnl_ShowReports.Controls.Add(this.label8);
+            this.pnl_ShowReports.Location = new System.Drawing.Point(3, 0);
+            this.pnl_ShowReports.Name = "pnl_ShowReports";
+            this.pnl_ShowReports.Size = new System.Drawing.Size(638, 382);
+            this.pnl_ShowReports.TabIndex = 8;
+            // 
+            // btn_Back2MainSR
+            // 
+            this.btn_Back2MainSR.BackColor = System.Drawing.Color.Honeydew;
+            this.btn_Back2MainSR.FlatAppearance.BorderColor = System.Drawing.Color.Honeydew;
+            this.btn_Back2MainSR.FlatAppearance.BorderSize = 0;
+            this.btn_Back2MainSR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Back2MainSR.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.btn_Back2MainSR.Location = new System.Drawing.Point(9, 10);
+            this.btn_Back2MainSR.Name = "btn_Back2MainSR";
+            this.btn_Back2MainSR.Size = new System.Drawing.Size(25, 25);
+            this.btn_Back2MainSR.TabIndex = 6;
+            this.btn_Back2MainSR.Text = "←";
+            this.btn_Back2MainSR.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_Back2MainSR.UseVisualStyleBackColor = false;
+            this.btn_Back2MainSR.Click += new System.EventHandler(this.btn_Back2MainSR_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.Location = new System.Drawing.Point(12, 197);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(0, 55);
+            this.label6.TabIndex = 5;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label7.Location = new System.Drawing.Point(38, 86);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(0, 55);
+            this.label7.TabIndex = 4;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label8.Location = new System.Drawing.Point(520, 10);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(0, 32);
+            this.label8.TabIndex = 3;
+            // 
+            // btn_Search
+            // 
+            this.btn_Search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Search.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn_Search.Location = new System.Drawing.Point(348, 282);
+            this.btn_Search.Name = "btn_Search";
+            this.btn_Search.Size = new System.Drawing.Size(263, 41);
+            this.btn_Search.TabIndex = 6;
+            this.btn_Search.Text = "Пошук працівників";
+            this.btn_Search.UseVisualStyleBackColor = true;
+            this.btn_Search.Click += new System.EventHandler(this.btn_Search_Click);
             // 
             // lbl_Date
             // 
@@ -423,183 +715,6 @@
             // 
             this.tmr_Timer.Tick += new System.EventHandler(this.tmr_Timer_Tick);
             // 
-            // pnl_ShowReports
-            // 
-            this.pnl_ShowReports.BackColor = System.Drawing.Color.Honeydew;
-            this.pnl_ShowReports.Controls.Add(this.btn_Back2MainSR);
-            this.pnl_ShowReports.Controls.Add(this.label6);
-            this.pnl_ShowReports.Controls.Add(this.label7);
-            this.pnl_ShowReports.Controls.Add(this.label8);
-            this.pnl_ShowReports.Location = new System.Drawing.Point(3, 0);
-            this.pnl_ShowReports.Name = "pnl_ShowReports";
-            this.pnl_ShowReports.Size = new System.Drawing.Size(638, 382);
-            this.pnl_ShowReports.TabIndex = 8;
-            // 
-            // btn_Back2MainSR
-            // 
-            this.btn_Back2MainSR.BackColor = System.Drawing.Color.Honeydew;
-            this.btn_Back2MainSR.FlatAppearance.BorderColor = System.Drawing.Color.Honeydew;
-            this.btn_Back2MainSR.FlatAppearance.BorderSize = 0;
-            this.btn_Back2MainSR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Back2MainSR.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.btn_Back2MainSR.Location = new System.Drawing.Point(9, 10);
-            this.btn_Back2MainSR.Name = "btn_Back2MainSR";
-            this.btn_Back2MainSR.Size = new System.Drawing.Size(25, 25);
-            this.btn_Back2MainSR.TabIndex = 6;
-            this.btn_Back2MainSR.Text = "←";
-            this.btn_Back2MainSR.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_Back2MainSR.UseVisualStyleBackColor = false;
-            this.btn_Back2MainSR.Click += new System.EventHandler(this.btn_Back2MainSR_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(12, 197);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(0, 55);
-            this.label6.TabIndex = 5;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.Location = new System.Drawing.Point(38, 86);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(0, 55);
-            this.label7.TabIndex = 4;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label8.Location = new System.Drawing.Point(520, 10);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(0, 32);
-            this.label8.TabIndex = 3;
-            // 
-            // pnl_AddPosition
-            // 
-            this.pnl_AddPosition.BackColor = System.Drawing.Color.Honeydew;
-            this.pnl_AddPosition.Controls.Add(this.btn_Back2MainAP);
-            this.pnl_AddPosition.Controls.Add(this.label9);
-            this.pnl_AddPosition.Controls.Add(this.label10);
-            this.pnl_AddPosition.Controls.Add(this.label11);
-            this.pnl_AddPosition.Location = new System.Drawing.Point(3, 31);
-            this.pnl_AddPosition.Name = "pnl_AddPosition";
-            this.pnl_AddPosition.Size = new System.Drawing.Size(632, 379);
-            this.pnl_AddPosition.TabIndex = 9;
-            // 
-            // btn_Back2MainAP
-            // 
-            this.btn_Back2MainAP.BackColor = System.Drawing.Color.Honeydew;
-            this.btn_Back2MainAP.FlatAppearance.BorderColor = System.Drawing.Color.Honeydew;
-            this.btn_Back2MainAP.FlatAppearance.BorderSize = 0;
-            this.btn_Back2MainAP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Back2MainAP.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.btn_Back2MainAP.Location = new System.Drawing.Point(9, 10);
-            this.btn_Back2MainAP.Name = "btn_Back2MainAP";
-            this.btn_Back2MainAP.Size = new System.Drawing.Size(25, 25);
-            this.btn_Back2MainAP.TabIndex = 6;
-            this.btn_Back2MainAP.Text = "←";
-            this.btn_Back2MainAP.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_Back2MainAP.UseVisualStyleBackColor = false;
-            this.btn_Back2MainAP.Click += new System.EventHandler(this.btn_Back2MainAP_Click);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label9.Location = new System.Drawing.Point(12, 197);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(0, 55);
-            this.label9.TabIndex = 5;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label10.Location = new System.Drawing.Point(38, 86);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(0, 55);
-            this.label10.TabIndex = 4;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label11.Location = new System.Drawing.Point(520, 10);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(0, 32);
-            this.label11.TabIndex = 3;
-            // 
-            // btn_Search
-            // 
-            this.btn_Search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Search.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btn_Search.Location = new System.Drawing.Point(348, 282);
-            this.btn_Search.Name = "btn_Search";
-            this.btn_Search.Size = new System.Drawing.Size(263, 41);
-            this.btn_Search.TabIndex = 6;
-            this.btn_Search.Text = "Пошук працівників";
-            this.btn_Search.UseVisualStyleBackColor = true;
-            this.btn_Search.Click += new System.EventHandler(this.btn_Search_Click);
-            // 
-            // pnl_Search
-            // 
-            this.pnl_Search.BackColor = System.Drawing.Color.Honeydew;
-            this.pnl_Search.Controls.Add(this.btn_Back2MainS);
-            this.pnl_Search.Controls.Add(this.label12);
-            this.pnl_Search.Controls.Add(this.label13);
-            this.pnl_Search.Controls.Add(this.label14);
-            this.pnl_Search.Location = new System.Drawing.Point(3, 0);
-            this.pnl_Search.Name = "pnl_Search";
-            this.pnl_Search.Size = new System.Drawing.Size(638, 382);
-            this.pnl_Search.TabIndex = 10;
-            // 
-            // btn_Back2MainS
-            // 
-            this.btn_Back2MainS.BackColor = System.Drawing.Color.Honeydew;
-            this.btn_Back2MainS.FlatAppearance.BorderColor = System.Drawing.Color.Honeydew;
-            this.btn_Back2MainS.FlatAppearance.BorderSize = 0;
-            this.btn_Back2MainS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Back2MainS.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.btn_Back2MainS.Location = new System.Drawing.Point(9, 10);
-            this.btn_Back2MainS.Name = "btn_Back2MainS";
-            this.btn_Back2MainS.Size = new System.Drawing.Size(25, 25);
-            this.btn_Back2MainS.TabIndex = 6;
-            this.btn_Back2MainS.Text = "←";
-            this.btn_Back2MainS.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_Back2MainS.UseVisualStyleBackColor = false;
-            this.btn_Back2MainS.Click += new System.EventHandler(this.btn_Back2MainS_Click);
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label12.Location = new System.Drawing.Point(12, 197);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(0, 55);
-            this.label12.TabIndex = 5;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label13.Location = new System.Drawing.Point(38, 86);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(0, 55);
-            this.label13.TabIndex = 4;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label14.Location = new System.Drawing.Point(520, 10);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(0, 32);
-            this.label14.TabIndex = 3;
-            // 
             // Form1
             // 
             this.AcceptButton = this.btn_Confirm_Login;
@@ -607,7 +722,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Honeydew;
             this.ClientSize = new System.Drawing.Size(638, 447);
-            this.Controls.Add(this.pnl_AddPosition);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.pnl_Authorization);
             this.Controls.Add(this.menuStrip1);
@@ -615,6 +729,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Відділ кадрів";
             this.pnl_Authorization.ResumeLayout(false);
             this.pnl_Authorization.PerformLayout();
@@ -622,6 +737,12 @@
             this.pnl_MainMenu.PerformLayout();
             this.pnl_AddWorker.ResumeLayout(false);
             this.pnl_AddWorker.PerformLayout();
+            this.pnl_Search.ResumeLayout(false);
+            this.pnl_Search.PerformLayout();
+            this.pnl_AddPosition.ResumeLayout(false);
+            this.pnl_AddPosition.PerformLayout();
+            this.pnl_ShowReports.ResumeLayout(false);
+            this.pnl_ShowReports.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ss_StatusStrip.ResumeLayout(false);
@@ -630,12 +751,6 @@
             this.ss_ConnectStrip.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.pnl_ShowReports.ResumeLayout(false);
-            this.pnl_ShowReports.PerformLayout();
-            this.pnl_AddPosition.ResumeLayout(false);
-            this.pnl_AddPosition.PerformLayout();
-            this.pnl_Search.ResumeLayout(false);
-            this.pnl_Search.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -692,6 +807,16 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button btn_AddWorkerAccept;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
