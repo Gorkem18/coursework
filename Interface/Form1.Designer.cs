@@ -30,9 +30,25 @@
         {
             this.components = new System.ComponentModel.Container();
             this.pnl_Authorization = new System.Windows.Forms.Panel();
-            this.pnl_MainMenu = new System.Windows.Forms.Panel();
+            this.btn_Exit = new System.Windows.Forms.Button();
+            this.btn_Confirm_Login = new System.Windows.Forms.Button();
+            this.tb_Password = new System.Windows.Forms.TextBox();
+            this.tb_Login = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.pnl_AddWorker = new System.Windows.Forms.Panel();
             this.label18 = new System.Windows.Forms.Label();
+            this.pnl_AddPosition = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.btn_AddPositionAccept = new System.Windows.Forms.Button();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.tb_payment = new System.Windows.Forms.TextBox();
+            this.tb_NameOfPosition = new System.Windows.Forms.TextBox();
+            this.btn_Back2MainAP = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -46,6 +62,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.pnl_MainMenu = new System.Windows.Forms.Panel();
             this.btn_Search = new System.Windows.Forms.Button();
             this.lbl_Date = new System.Windows.Forms.Label();
             this.lbl_Time = new System.Windows.Forms.Label();
@@ -53,12 +70,6 @@
             this.btn_AddPosition = new System.Windows.Forms.Button();
             this.btn_ShowReports = new System.Windows.Forms.Button();
             this.btn_AddWorker = new System.Windows.Forms.Button();
-            this.btn_Exit = new System.Windows.Forms.Button();
-            this.btn_Confirm_Login = new System.Windows.Forms.Button();
-            this.tb_Password = new System.Windows.Forms.TextBox();
-            this.tb_Login = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.tmr_ClearStatus = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.ss_StatusStrip = new System.Windows.Forms.StatusStrip();
@@ -74,8 +85,9 @@
             this.інформаціяПроРозробникаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tmr_Timer = new System.Windows.Forms.Timer(this.components);
             this.pnl_Authorization.SuspendLayout();
-            this.pnl_MainMenu.SuspendLayout();
             this.pnl_AddWorker.SuspendLayout();
+            this.pnl_AddPosition.SuspendLayout();
+            this.pnl_MainMenu.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.ss_StatusStrip.SuspendLayout();
             this.ss_ConnectStrip.SuspendLayout();
@@ -85,33 +97,79 @@
             // pnl_Authorization
             // 
             this.pnl_Authorization.BackColor = System.Drawing.Color.Honeydew;
-            this.pnl_Authorization.Controls.Add(this.pnl_AddWorker);
-            this.pnl_Authorization.Controls.Add(this.pnl_MainMenu);
             this.pnl_Authorization.Controls.Add(this.btn_Exit);
             this.pnl_Authorization.Controls.Add(this.btn_Confirm_Login);
             this.pnl_Authorization.Controls.Add(this.tb_Password);
             this.pnl_Authorization.Controls.Add(this.tb_Login);
             this.pnl_Authorization.Controls.Add(this.label2);
             this.pnl_Authorization.Controls.Add(this.label1);
-            this.pnl_Authorization.Location = new System.Drawing.Point(0, 31);
+            this.pnl_Authorization.Location = new System.Drawing.Point(260, 98);
             this.pnl_Authorization.Name = "pnl_Authorization";
-            this.pnl_Authorization.Size = new System.Drawing.Size(638, 382);
+            this.pnl_Authorization.Size = new System.Drawing.Size(26, 19);
             this.pnl_Authorization.TabIndex = 0;
             // 
-            // pnl_MainMenu
+            // btn_Exit
             // 
-            this.pnl_MainMenu.BackColor = System.Drawing.Color.Honeydew;
-            this.pnl_MainMenu.Controls.Add(this.btn_Search);
-            this.pnl_MainMenu.Controls.Add(this.lbl_Date);
-            this.pnl_MainMenu.Controls.Add(this.lbl_Time);
-            this.pnl_MainMenu.Controls.Add(this.lbl_Notification);
-            this.pnl_MainMenu.Controls.Add(this.btn_AddPosition);
-            this.pnl_MainMenu.Controls.Add(this.btn_ShowReports);
-            this.pnl_MainMenu.Controls.Add(this.btn_AddWorker);
-            this.pnl_MainMenu.Location = new System.Drawing.Point(3, 0);
-            this.pnl_MainMenu.Name = "pnl_MainMenu";
-            this.pnl_MainMenu.Size = new System.Drawing.Size(638, 382);
-            this.pnl_MainMenu.TabIndex = 6;
+            this.btn_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn_Exit.Location = new System.Drawing.Point(303, 169);
+            this.btn_Exit.Name = "btn_Exit";
+            this.btn_Exit.Size = new System.Drawing.Size(93, 42);
+            this.btn_Exit.TabIndex = 5;
+            this.btn_Exit.Text = "Вийти";
+            this.btn_Exit.UseVisualStyleBackColor = true;
+            this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
+            // 
+            // btn_Confirm_Login
+            // 
+            this.btn_Confirm_Login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Confirm_Login.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn_Confirm_Login.Location = new System.Drawing.Point(174, 169);
+            this.btn_Confirm_Login.Name = "btn_Confirm_Login";
+            this.btn_Confirm_Login.Size = new System.Drawing.Size(93, 42);
+            this.btn_Confirm_Login.TabIndex = 4;
+            this.btn_Confirm_Login.Text = "Ввійти";
+            this.btn_Confirm_Login.UseVisualStyleBackColor = true;
+            this.btn_Confirm_Login.Click += new System.EventHandler(this.btn_Confirm_Login_Click);
+            // 
+            // tb_Password
+            // 
+            this.tb_Password.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tb_Password.Location = new System.Drawing.Point(289, 96);
+            this.tb_Password.Name = "tb_Password";
+            this.tb_Password.PasswordChar = '*';
+            this.tb_Password.Size = new System.Drawing.Size(196, 34);
+            this.tb_Password.TabIndex = 3;
+            // 
+            // tb_Login
+            // 
+            this.tb_Login.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tb_Login.Location = new System.Drawing.Point(289, 47);
+            this.tb_Login.Name = "tb_Login";
+            this.tb_Login.Size = new System.Drawing.Size(196, 34);
+            this.tb_Login.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(140, 99);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(99, 29);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Пароль";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(140, 50);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(74, 29);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Логін";
             // 
             // pnl_AddWorker
             // 
@@ -122,17 +180,17 @@
             this.pnl_AddWorker.Controls.Add(this.label15);
             this.pnl_AddWorker.Controls.Add(this.btn_AddWorkerAccept);
             this.pnl_AddWorker.Controls.Add(this.radioButton1);
+            this.pnl_AddWorker.Controls.Add(this.btn_Back2Main);
             this.pnl_AddWorker.Controls.Add(this.dateTimePicker1);
             this.pnl_AddWorker.Controls.Add(this.textBox3);
             this.pnl_AddWorker.Controls.Add(this.textBox2);
             this.pnl_AddWorker.Controls.Add(this.textBox1);
-            this.pnl_AddWorker.Controls.Add(this.btn_Back2Main);
             this.pnl_AddWorker.Controls.Add(this.label3);
             this.pnl_AddWorker.Controls.Add(this.label4);
             this.pnl_AddWorker.Controls.Add(this.label5);
-            this.pnl_AddWorker.Location = new System.Drawing.Point(0, 0);
+            this.pnl_AddWorker.Location = new System.Drawing.Point(292, 98);
             this.pnl_AddWorker.Name = "pnl_AddWorker";
-            this.pnl_AddWorker.Size = new System.Drawing.Size(638, 382);
+            this.pnl_AddWorker.Size = new System.Drawing.Size(32, 35);
             this.pnl_AddWorker.TabIndex = 7;
             // 
             // label18
@@ -144,6 +202,125 @@
             this.label18.Size = new System.Drawing.Size(219, 29);
             this.label18.TabIndex = 20;
             this.label18.Text = "Дата народження";
+            // 
+            // pnl_AddPosition
+            // 
+            this.pnl_AddPosition.BackColor = System.Drawing.Color.Honeydew;
+            this.pnl_AddPosition.Controls.Add(this.label7);
+            this.pnl_AddPosition.Controls.Add(this.label9);
+            this.pnl_AddPosition.Controls.Add(this.btn_AddPositionAccept);
+            this.pnl_AddPosition.Controls.Add(this.radioButton2);
+            this.pnl_AddPosition.Controls.Add(this.tb_payment);
+            this.pnl_AddPosition.Controls.Add(this.tb_NameOfPosition);
+            this.pnl_AddPosition.Controls.Add(this.btn_Back2MainAP);
+            this.pnl_AddPosition.Controls.Add(this.label10);
+            this.pnl_AddPosition.Controls.Add(this.label11);
+            this.pnl_AddPosition.Controls.Add(this.label12);
+            this.pnl_AddPosition.Location = new System.Drawing.Point(260, 143);
+            this.pnl_AddPosition.Name = "pnl_AddPosition";
+            this.pnl_AddPosition.Size = new System.Drawing.Size(10, 18);
+            this.pnl_AddPosition.TabIndex = 21;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label7.Location = new System.Drawing.Point(89, 127);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(93, 29);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "Ставка";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label9.Location = new System.Drawing.Point(89, 81);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(171, 29);
+            this.label9.TabIndex = 17;
+            this.label9.Text = "Назва посади";
+            // 
+            // btn_AddPositionAccept
+            // 
+            this.btn_AddPositionAccept.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn_AddPositionAccept.Location = new System.Drawing.Point(141, 227);
+            this.btn_AddPositionAccept.Name = "btn_AddPositionAccept";
+            this.btn_AddPositionAccept.Size = new System.Drawing.Size(278, 49);
+            this.btn_AddPositionAccept.TabIndex = 16;
+            this.btn_AddPositionAccept.Text = "Додати посаду";
+            this.btn_AddPositionAccept.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.radioButton2.Location = new System.Drawing.Point(94, 178);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(334, 33);
+            this.radioButton2.TabIndex = 15;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Необхідність вищої освіти";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // tb_payment
+            // 
+            this.tb_payment.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tb_payment.Location = new System.Drawing.Point(296, 122);
+            this.tb_payment.Name = "tb_payment";
+            this.tb_payment.Size = new System.Drawing.Size(151, 34);
+            this.tb_payment.TabIndex = 13;
+            // 
+            // tb_NameOfPosition
+            // 
+            this.tb_NameOfPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tb_NameOfPosition.Location = new System.Drawing.Point(296, 76);
+            this.tb_NameOfPosition.Name = "tb_NameOfPosition";
+            this.tb_NameOfPosition.Size = new System.Drawing.Size(151, 34);
+            this.tb_NameOfPosition.TabIndex = 12;
+            // 
+            // btn_Back2MainAP
+            // 
+            this.btn_Back2MainAP.BackColor = System.Drawing.Color.Honeydew;
+            this.btn_Back2MainAP.FlatAppearance.BorderColor = System.Drawing.Color.Honeydew;
+            this.btn_Back2MainAP.FlatAppearance.BorderSize = 0;
+            this.btn_Back2MainAP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Back2MainAP.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.btn_Back2MainAP.Location = new System.Drawing.Point(9, 10);
+            this.btn_Back2MainAP.Name = "btn_Back2MainAP";
+            this.btn_Back2MainAP.Size = new System.Drawing.Size(25, 25);
+            this.btn_Back2MainAP.TabIndex = 6;
+            this.btn_Back2MainAP.Text = "←";
+            this.btn_Back2MainAP.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_Back2MainAP.UseVisualStyleBackColor = false;
+            this.btn_Back2MainAP.Click += new System.EventHandler(this.btn_Back2MainAP_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label10.Location = new System.Drawing.Point(12, 197);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(0, 55);
+            this.label10.TabIndex = 5;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label11.Location = new System.Drawing.Point(38, 86);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(0, 55);
+            this.label11.TabIndex = 4;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label12.Location = new System.Drawing.Point(520, 10);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(0, 32);
+            this.label12.TabIndex = 3;
             // 
             // label17
             // 
@@ -189,7 +366,7 @@
             // 
             this.radioButton1.AutoSize = true;
             this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.radioButton1.Location = new System.Drawing.Point(94, 234);
+            this.radioButton1.Location = new System.Drawing.Point(94, 253);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(174, 33);
             this.radioButton1.TabIndex = 15;
@@ -236,7 +413,7 @@
             this.btn_Back2Main.FlatAppearance.BorderSize = 0;
             this.btn_Back2Main.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Back2Main.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.btn_Back2Main.Location = new System.Drawing.Point(9, 10);
+            this.btn_Back2Main.Location = new System.Drawing.Point(13, 12);
             this.btn_Back2Main.Name = "btn_Back2Main";
             this.btn_Back2Main.Size = new System.Drawing.Size(25, 25);
             this.btn_Back2Main.TabIndex = 6;
@@ -272,11 +449,26 @@
             this.label5.Size = new System.Drawing.Size(0, 32);
             this.label5.TabIndex = 3;
             // 
+            // pnl_MainMenu
+            // 
+            this.pnl_MainMenu.BackColor = System.Drawing.Color.Honeydew;
+            this.pnl_MainMenu.Controls.Add(this.btn_Search);
+            this.pnl_MainMenu.Controls.Add(this.lbl_Date);
+            this.pnl_MainMenu.Controls.Add(this.lbl_Time);
+            this.pnl_MainMenu.Controls.Add(this.lbl_Notification);
+            this.pnl_MainMenu.Controls.Add(this.btn_AddPosition);
+            this.pnl_MainMenu.Controls.Add(this.btn_ShowReports);
+            this.pnl_MainMenu.Controls.Add(this.btn_AddWorker);
+            this.pnl_MainMenu.Location = new System.Drawing.Point(260, 123);
+            this.pnl_MainMenu.Name = "pnl_MainMenu";
+            this.pnl_MainMenu.Size = new System.Drawing.Size(19, 10);
+            this.pnl_MainMenu.TabIndex = 6;
+            // 
             // btn_Search
             // 
             this.btn_Search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Search.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btn_Search.Location = new System.Drawing.Point(348, 282);
+            this.btn_Search.Location = new System.Drawing.Point(344, 252);
             this.btn_Search.Name = "btn_Search";
             this.btn_Search.Size = new System.Drawing.Size(263, 41);
             this.btn_Search.TabIndex = 6;
@@ -305,7 +497,7 @@
             // 
             this.lbl_Notification.AutoSize = true;
             this.lbl_Notification.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lbl_Notification.Location = new System.Drawing.Point(520, 10);
+            this.lbl_Notification.Location = new System.Drawing.Point(516, -20);
             this.lbl_Notification.Name = "lbl_Notification";
             this.lbl_Notification.Size = new System.Drawing.Size(0, 32);
             this.lbl_Notification.TabIndex = 3;
@@ -314,18 +506,19 @@
             // 
             this.btn_AddPosition.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_AddPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btn_AddPosition.Location = new System.Drawing.Point(348, 211);
+            this.btn_AddPosition.Location = new System.Drawing.Point(344, 181);
             this.btn_AddPosition.Name = "btn_AddPosition";
             this.btn_AddPosition.Size = new System.Drawing.Size(263, 41);
             this.btn_AddPosition.TabIndex = 2;
             this.btn_AddPosition.Text = "Додати посаду";
             this.btn_AddPosition.UseVisualStyleBackColor = true;
+            this.btn_AddPosition.Click += new System.EventHandler(this.btn_AddPosition_Click);
             // 
             // btn_ShowReports
             // 
             this.btn_ShowReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_ShowReports.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btn_ShowReports.Location = new System.Drawing.Point(348, 137);
+            this.btn_ShowReports.Location = new System.Drawing.Point(344, 107);
             this.btn_ShowReports.Name = "btn_ShowReports";
             this.btn_ShowReports.Size = new System.Drawing.Size(263, 41);
             this.btn_ShowReports.TabIndex = 1;
@@ -336,76 +529,13 @@
             // 
             this.btn_AddWorker.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_AddWorker.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btn_AddWorker.Location = new System.Drawing.Point(348, 62);
+            this.btn_AddWorker.Location = new System.Drawing.Point(344, 32);
             this.btn_AddWorker.Name = "btn_AddWorker";
             this.btn_AddWorker.Size = new System.Drawing.Size(263, 41);
             this.btn_AddWorker.TabIndex = 0;
             this.btn_AddWorker.Text = "Додати працівника";
             this.btn_AddWorker.UseVisualStyleBackColor = true;
             this.btn_AddWorker.Click += new System.EventHandler(this.btn_AddWorker_Click);
-            // 
-            // btn_Exit
-            // 
-            this.btn_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btn_Exit.Location = new System.Drawing.Point(302, 231);
-            this.btn_Exit.Name = "btn_Exit";
-            this.btn_Exit.Size = new System.Drawing.Size(93, 42);
-            this.btn_Exit.TabIndex = 5;
-            this.btn_Exit.Text = "Вийти";
-            this.btn_Exit.UseVisualStyleBackColor = true;
-            this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
-            // 
-            // btn_Confirm_Login
-            // 
-            this.btn_Confirm_Login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Confirm_Login.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btn_Confirm_Login.Location = new System.Drawing.Point(173, 231);
-            this.btn_Confirm_Login.Name = "btn_Confirm_Login";
-            this.btn_Confirm_Login.Size = new System.Drawing.Size(93, 42);
-            this.btn_Confirm_Login.TabIndex = 4;
-            this.btn_Confirm_Login.Text = "Ввійти";
-            this.btn_Confirm_Login.UseVisualStyleBackColor = true;
-            this.btn_Confirm_Login.Click += new System.EventHandler(this.btn_Confirm_Login_Click);
-            // 
-            // tb_Password
-            // 
-            this.tb_Password.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tb_Password.Location = new System.Drawing.Point(288, 158);
-            this.tb_Password.Name = "tb_Password";
-            this.tb_Password.PasswordChar = '*';
-            this.tb_Password.Size = new System.Drawing.Size(196, 34);
-            this.tb_Password.TabIndex = 3;
-            // 
-            // tb_Login
-            // 
-            this.tb_Login.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tb_Login.Location = new System.Drawing.Point(288, 109);
-            this.tb_Login.Name = "tb_Login";
-            this.tb_Login.Size = new System.Drawing.Size(196, 34);
-            this.tb_Login.TabIndex = 2;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(139, 161);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(99, 29);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Пароль";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(139, 112);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 29);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Логін";
             // 
             // tmr_ClearStatus
             // 
@@ -419,7 +549,8 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.48903F));
             this.tableLayoutPanel1.Controls.Add(this.ss_StatusStrip, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.ss_ConnectStrip, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 419);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 423);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -431,9 +562,10 @@
             this.ss_StatusStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.ss_StatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ts_StatusLabel});
-            this.ss_StatusStrip.Location = new System.Drawing.Point(0, 6);
+            this.ss_StatusStrip.Location = new System.Drawing.Point(0, 4);
             this.ss_StatusStrip.Name = "ss_StatusStrip";
-            this.ss_StatusStrip.Size = new System.Drawing.Size(468, 22);
+            this.ss_StatusStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.ss_StatusStrip.Size = new System.Drawing.Size(468, 24);
             this.ss_StatusStrip.TabIndex = 0;
             this.ss_StatusStrip.Text = "statusStrip1";
             // 
@@ -441,7 +573,7 @@
             // 
             this.ts_StatusLabel.BackColor = System.Drawing.Color.White;
             this.ts_StatusLabel.Name = "ts_StatusLabel";
-            this.ts_StatusLabel.Size = new System.Drawing.Size(0, 17);
+            this.ts_StatusLabel.Size = new System.Drawing.Size(0, 19);
             // 
             // ss_ConnectStrip
             // 
@@ -532,7 +664,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Honeydew;
-            this.ClientSize = new System.Drawing.Size(638, 447);
+            this.ClientSize = new System.Drawing.Size(638, 451);
+            this.Controls.Add(this.pnl_AddWorker);
+            this.Controls.Add(this.pnl_AddPosition);
+            this.Controls.Add(this.pnl_MainMenu);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.pnl_Authorization);
             this.Controls.Add(this.menuStrip1);
@@ -544,10 +679,12 @@
             this.Text = "Відділ кадрів";
             this.pnl_Authorization.ResumeLayout(false);
             this.pnl_Authorization.PerformLayout();
-            this.pnl_MainMenu.ResumeLayout(false);
-            this.pnl_MainMenu.PerformLayout();
             this.pnl_AddWorker.ResumeLayout(false);
             this.pnl_AddWorker.PerformLayout();
+            this.pnl_AddPosition.ResumeLayout(false);
+            this.pnl_AddPosition.PerformLayout();
+            this.pnl_MainMenu.ResumeLayout(false);
+            this.pnl_MainMenu.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ss_StatusStrip.ResumeLayout(false);
@@ -607,6 +744,17 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Panel pnl_AddPosition;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btn_AddPositionAccept;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.TextBox tb_payment;
+        private System.Windows.Forms.TextBox tb_NameOfPosition;
+        private System.Windows.Forms.Button btn_Back2MainAP;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
     }
 }
 

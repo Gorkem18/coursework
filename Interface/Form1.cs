@@ -16,15 +16,21 @@ namespace Interface
             tmr_ClearStatus.Interval = 10000;
             tmr_Timer.Interval = 1000;
             tmr_Timer.Enabled = true;
-            //pnl_AddPosition.Hide();
+            HideAll();
+            pnl_Authorization.Dock = DockStyle.Fill;
+            pnl_Authorization.Show();
+        }
+        
+        private void HideAll()
+        {
+            pnl_AddPosition.Hide();
             //pnl_ShowReports.Hide();
             pnl_AddWorker.Hide();
             pnl_MainMenu.Hide();
             //pnl_Search.Hide();
-            pnl_Authorization.Show();
-
+            pnl_Authorization.Hide();
         }
-        
+
         private void btn_Exit_Click(object sender, EventArgs e)
         {
             Close();
@@ -40,6 +46,7 @@ namespace Interface
 
             if (tb_Login.Text == login && tb_Password.Text == password)
             {
+
                 AuthorizationSuccesful();
             }
             else
@@ -97,6 +104,7 @@ namespace Interface
 
         private void AuthorizationSuccesful ()
         {
+            pnl_MainMenu.Dock = DockStyle.Fill;
             pnl_MainMenu.Show();
             ts_StatusLabel.Text = "Авторизація пройшла успішно";
             tmr_ClearStatus.Enabled = true;
@@ -119,6 +127,27 @@ namespace Interface
             ts_ConnectIndicator.Text = "Підключено";
             ts_ConnectIndicator.ForeColor = System.Drawing.Color.Green;
             перепідключитисьДоБДToolStripMenuItem.Enabled = true;
+            string str = "tyui";
+
+
+            //for insert
+
+            //SqlCommand tyui = new SqlCommand(str, connect);
+            //tyui.ExecuteNonQuery();
+
+
+            //for select
+            //SqlCommand tyui = new SqlCommand(str, connect);
+            //tyui.ExecuteNonQuery();
+            //SqlDataReader reader = tyui.ExecuteReader();
+            //while(reader.Read())
+            //{
+            //    datagrid.rows.add(reader[0],reader[1], reader[2]);
+            //}
+            //reader.Close();
+
+            //Event cellcontentclick при кліканні на рядок 
+            //textgrid.currentrow.cells[0].tostring();
         }
 
         private void DBdisconnect()
@@ -148,8 +177,23 @@ namespace Interface
 
         private void btn_AddWorker_Click(object sender, EventArgs e)
         {
+
             pnl_MainMenu.Hide();
+            pnl_AddWorker.Dock = DockStyle.Fill;
             pnl_AddWorker.Show();
+        }
+
+        private void btn_Back2MainAP_Click(object sender, EventArgs e)
+        {
+            pnl_AddPosition.Hide();
+            pnl_MainMenu.Show();
+        }
+
+        private void btn_AddPosition_Click(object sender, EventArgs e)
+        {
+            pnl_MainMenu.Hide();
+            pnl_AddPosition.Dock = DockStyle.Fill;
+            pnl_AddPosition.Show();
         }
     }
 }
