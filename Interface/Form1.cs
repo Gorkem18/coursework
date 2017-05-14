@@ -23,9 +23,9 @@ namespace Interface
         
         private void HideAll()
         {
-            pnl_AddPosition.Hide();
+            pnl_Position.Hide();
             //pnl_ShowReports.Hide();
-            pnl_AddWorker.Hide();
+            pnl_Workers.Hide();
             pnl_MainMenu.Hide();
             //pnl_Search.Hide();
             pnl_Authorization.Hide();
@@ -166,7 +166,7 @@ namespace Interface
 
         private void btn_Back2Main_Click(object sender, EventArgs e)
         {
-            pnl_AddWorker.Hide();
+            pnl_Workers.Hide();
             pnl_MainMenu.Show();
         }
 
@@ -175,25 +175,25 @@ namespace Interface
             MessageBox.Show("Розробив студент групи КН-14 Танасюк Ілля Курсова робота з СТУБД");
         }
 
-        private void btn_AddWorker_Click(object sender, EventArgs e)
+        private void btn_Workers_Click(object sender, EventArgs e)
         {
 
             pnl_MainMenu.Hide();
-            pnl_AddWorker.Dock = DockStyle.Fill;
-            pnl_AddWorker.Show();
+            pnl_Workers.Dock = DockStyle.Fill;
+            pnl_Workers.Show();
         }
 
         private void btn_Back2MainAP_Click(object sender, EventArgs e)
         {
-            pnl_AddPosition.Hide();
+            pnl_Position.Hide();
             pnl_MainMenu.Show();
         }
 
-        private void btn_AddPosition_Click(object sender, EventArgs e)
+        private void btn_Position_Click(object sender, EventArgs e)
         {
             pnl_MainMenu.Hide();
-            pnl_AddPosition.Dock = DockStyle.Fill;
-            pnl_AddPosition.Show();
+            pnl_Position.Dock = DockStyle.Fill;
+            pnl_Position.Show();
         }
     }
 }
