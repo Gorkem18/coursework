@@ -40,19 +40,24 @@
             this.tc_Workers = new System.Windows.Forms.TabControl();
             this.tp_AddWorker = new System.Windows.Forms.TabPage();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cb_AddWorkerGender = new System.Windows.Forms.ComboBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.btn_AddWorkerAccept = new System.Windows.Forms.Button();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.rb_AddWorkerHiEd = new System.Windows.Forms.RadioButton();
+            this.dtp_AddWorkerBDay = new System.Windows.Forms.DateTimePicker();
+            this.tb_AddWorkerSurname = new System.Windows.Forms.TextBox();
+            this.tb_AddWorkerLastName = new System.Windows.Forms.TextBox();
+            this.tb_AddWorkerName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.tp_EditWorker = new System.Windows.Forms.TabPage();
+            this.rb_EditHiEd = new System.Windows.Forms.RadioButton();
+            this.dtp_EditBDay = new System.Windows.Forms.DateTimePicker();
+            this.label21 = new System.Windows.Forms.Label();
+            this.cb_EditWorkerGender = new System.Windows.Forms.ComboBox();
+            this.label20 = new System.Windows.Forms.Label();
             this.tb_SurNameWorker4Edit = new System.Windows.Forms.TextBox();
             this.tb_NameWorker4Edit = new System.Windows.Forms.TextBox();
             this.tb_LastNameWorker4Edit = new System.Windows.Forms.TextBox();
@@ -61,7 +66,6 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.btn_SearchWorker4Edit = new System.Windows.Forms.Button();
             this.btn_EditWorker = new System.Windows.Forms.Button();
             this.dgw_EditWorker = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -152,7 +156,7 @@
             // 
             this.btn_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btn_Exit.Location = new System.Drawing.Point(296, 214);
+            this.btn_Exit.Location = new System.Drawing.Point(415, 266);
             this.btn_Exit.Name = "btn_Exit";
             this.btn_Exit.Size = new System.Drawing.Size(93, 42);
             this.btn_Exit.TabIndex = 5;
@@ -164,7 +168,7 @@
             // 
             this.btn_Confirm_Login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Confirm_Login.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btn_Confirm_Login.Location = new System.Drawing.Point(167, 214);
+            this.btn_Confirm_Login.Location = new System.Drawing.Point(286, 266);
             this.btn_Confirm_Login.Name = "btn_Confirm_Login";
             this.btn_Confirm_Login.Size = new System.Drawing.Size(93, 42);
             this.btn_Confirm_Login.TabIndex = 4;
@@ -175,7 +179,7 @@
             // tb_Password
             // 
             this.tb_Password.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tb_Password.Location = new System.Drawing.Point(282, 141);
+            this.tb_Password.Location = new System.Drawing.Point(401, 193);
             this.tb_Password.Name = "tb_Password";
             this.tb_Password.PasswordChar = '*';
             this.tb_Password.Size = new System.Drawing.Size(196, 34);
@@ -184,7 +188,7 @@
             // tb_Login
             // 
             this.tb_Login.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tb_Login.Location = new System.Drawing.Point(282, 92);
+            this.tb_Login.Location = new System.Drawing.Point(401, 144);
             this.tb_Login.Name = "tb_Login";
             this.tb_Login.Size = new System.Drawing.Size(196, 34);
             this.tb_Login.TabIndex = 2;
@@ -194,7 +198,7 @@
             this.label2.AutoSize = true;
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(133, 144);
+            this.label2.Location = new System.Drawing.Point(252, 196);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(99, 29);
             this.label2.TabIndex = 1;
@@ -205,7 +209,7 @@
             this.label1.AutoSize = true;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(133, 95);
+            this.label1.Location = new System.Drawing.Point(252, 147);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 29);
             this.label1.TabIndex = 0;
@@ -220,7 +224,7 @@
             this.pnl_Workers.Controls.Add(this.label4);
             this.pnl_Workers.Location = new System.Drawing.Point(0, 31);
             this.pnl_Workers.Name = "pnl_Workers";
-            this.pnl_Workers.Size = new System.Drawing.Size(835, 454);
+            this.pnl_Workers.Size = new System.Drawing.Size(835, 455);
             this.pnl_Workers.TabIndex = 7;
             // 
             // tc_Workers
@@ -241,17 +245,17 @@
             // 
             this.tp_AddWorker.BackColor = System.Drawing.Color.Honeydew;
             this.tp_AddWorker.Controls.Add(this.label6);
-            this.tp_AddWorker.Controls.Add(this.comboBox1);
+            this.tp_AddWorker.Controls.Add(this.cb_AddWorkerGender);
             this.tp_AddWorker.Controls.Add(this.label18);
             this.tp_AddWorker.Controls.Add(this.label17);
             this.tp_AddWorker.Controls.Add(this.label16);
             this.tp_AddWorker.Controls.Add(this.label15);
             this.tp_AddWorker.Controls.Add(this.btn_AddWorkerAccept);
-            this.tp_AddWorker.Controls.Add(this.radioButton1);
-            this.tp_AddWorker.Controls.Add(this.dateTimePicker1);
-            this.tp_AddWorker.Controls.Add(this.textBox3);
-            this.tp_AddWorker.Controls.Add(this.textBox2);
-            this.tp_AddWorker.Controls.Add(this.textBox1);
+            this.tp_AddWorker.Controls.Add(this.rb_AddWorkerHiEd);
+            this.tp_AddWorker.Controls.Add(this.dtp_AddWorkerBDay);
+            this.tp_AddWorker.Controls.Add(this.tb_AddWorkerSurname);
+            this.tp_AddWorker.Controls.Add(this.tb_AddWorkerLastName);
+            this.tp_AddWorker.Controls.Add(this.tb_AddWorkerName);
             this.tp_AddWorker.Controls.Add(this.label5);
             this.tp_AddWorker.Location = new System.Drawing.Point(4, 28);
             this.tp_AddWorker.Name = "tp_AddWorker";
@@ -270,17 +274,19 @@
             this.label6.TabIndex = 33;
             this.label6.Text = "Стать";
             // 
-            // comboBox1
+            // cb_AddWorkerGender
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cb_AddWorkerGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_AddWorkerGender.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cb_AddWorkerGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cb_AddWorkerGender.FormattingEnabled = true;
+            this.cb_AddWorkerGender.Items.AddRange(new object[] {
             "Чоловіча",
             "Жіноча"});
-            this.comboBox1.Location = new System.Drawing.Point(321, 162);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(151, 37);
-            this.comboBox1.TabIndex = 32;
+            this.cb_AddWorkerGender.Location = new System.Drawing.Point(321, 162);
+            this.cb_AddWorkerGender.Name = "cb_AddWorkerGender";
+            this.cb_AddWorkerGender.Size = new System.Drawing.Size(151, 37);
+            this.cb_AddWorkerGender.TabIndex = 32;
             // 
             // label18
             // 
@@ -324,6 +330,7 @@
             // 
             // btn_AddWorkerAccept
             // 
+            this.btn_AddWorkerAccept.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_AddWorkerAccept.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btn_AddWorkerAccept.Location = new System.Drawing.Point(212, 290);
             this.btn_AddWorkerAccept.Name = "btn_AddWorkerAccept";
@@ -331,50 +338,55 @@
             this.btn_AddWorkerAccept.TabIndex = 27;
             this.btn_AddWorkerAccept.Text = "Додати працівника";
             this.btn_AddWorkerAccept.UseVisualStyleBackColor = true;
+            this.btn_AddWorkerAccept.Click += new System.EventHandler(this.btn_AddWorkerAccept_Click);
             // 
-            // radioButton1
+            // rb_AddWorkerHiEd
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.radioButton1.Location = new System.Drawing.Point(494, 168);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(174, 33);
-            this.radioButton1.TabIndex = 26;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Вища освіта";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rb_AddWorkerHiEd.AutoSize = true;
+            this.rb_AddWorkerHiEd.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.rb_AddWorkerHiEd.Location = new System.Drawing.Point(494, 168);
+            this.rb_AddWorkerHiEd.Name = "rb_AddWorkerHiEd";
+            this.rb_AddWorkerHiEd.Size = new System.Drawing.Size(174, 33);
+            this.rb_AddWorkerHiEd.TabIndex = 26;
+            this.rb_AddWorkerHiEd.TabStop = true;
+            this.rb_AddWorkerHiEd.Text = "Вища освіта";
+            this.rb_AddWorkerHiEd.UseVisualStyleBackColor = true;
             // 
-            // dateTimePicker1
+            // dtp_AddWorkerBDay
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(348, 216);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(251, 34);
-            this.dateTimePicker1.TabIndex = 25;
+            this.dtp_AddWorkerBDay.CalendarTitleBackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dtp_AddWorkerBDay.CalendarTitleForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.dtp_AddWorkerBDay.CalendarTrailingForeColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.dtp_AddWorkerBDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dtp_AddWorkerBDay.Location = new System.Drawing.Point(348, 216);
+            this.dtp_AddWorkerBDay.Name = "dtp_AddWorkerBDay";
+            this.dtp_AddWorkerBDay.Size = new System.Drawing.Size(251, 34);
+            this.dtp_AddWorkerBDay.TabIndex = 25;
             // 
-            // textBox3
+            // tb_AddWorkerSurname
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox3.Location = new System.Drawing.Point(321, 118);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(151, 34);
-            this.textBox3.TabIndex = 24;
+            this.tb_AddWorkerSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tb_AddWorkerSurname.Location = new System.Drawing.Point(321, 118);
+            this.tb_AddWorkerSurname.Name = "tb_AddWorkerSurname";
+            this.tb_AddWorkerSurname.Size = new System.Drawing.Size(151, 34);
+            this.tb_AddWorkerSurname.TabIndex = 24;
             // 
-            // textBox2
+            // tb_AddWorkerLastName
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox2.Location = new System.Drawing.Point(321, 20);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(151, 34);
-            this.textBox2.TabIndex = 23;
+            this.tb_AddWorkerLastName.BackColor = System.Drawing.Color.White;
+            this.tb_AddWorkerLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tb_AddWorkerLastName.Location = new System.Drawing.Point(321, 20);
+            this.tb_AddWorkerLastName.Name = "tb_AddWorkerLastName";
+            this.tb_AddWorkerLastName.Size = new System.Drawing.Size(151, 34);
+            this.tb_AddWorkerLastName.TabIndex = 23;
             // 
-            // textBox1
+            // tb_AddWorkerName
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.Location = new System.Drawing.Point(321, 72);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(151, 34);
-            this.textBox1.TabIndex = 22;
+            this.tb_AddWorkerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tb_AddWorkerName.Location = new System.Drawing.Point(321, 72);
+            this.tb_AddWorkerName.Name = "tb_AddWorkerName";
+            this.tb_AddWorkerName.Size = new System.Drawing.Size(151, 34);
+            this.tb_AddWorkerName.TabIndex = 22;
             // 
             // label5
             // 
@@ -388,6 +400,11 @@
             // tp_EditWorker
             // 
             this.tp_EditWorker.BackColor = System.Drawing.Color.Honeydew;
+            this.tp_EditWorker.Controls.Add(this.rb_EditHiEd);
+            this.tp_EditWorker.Controls.Add(this.dtp_EditBDay);
+            this.tp_EditWorker.Controls.Add(this.label21);
+            this.tp_EditWorker.Controls.Add(this.cb_EditWorkerGender);
+            this.tp_EditWorker.Controls.Add(this.label20);
             this.tp_EditWorker.Controls.Add(this.tb_SurNameWorker4Edit);
             this.tp_EditWorker.Controls.Add(this.tb_NameWorker4Edit);
             this.tp_EditWorker.Controls.Add(this.tb_LastNameWorker4Edit);
@@ -396,7 +413,6 @@
             this.tp_EditWorker.Controls.Add(this.label14);
             this.tp_EditWorker.Controls.Add(this.label13);
             this.tp_EditWorker.Controls.Add(this.label8);
-            this.tp_EditWorker.Controls.Add(this.btn_SearchWorker4Edit);
             this.tp_EditWorker.Controls.Add(this.btn_EditWorker);
             this.tp_EditWorker.Controls.Add(this.dgw_EditWorker);
             this.tp_EditWorker.Location = new System.Drawing.Point(4, 28);
@@ -405,43 +421,103 @@
             this.tp_EditWorker.TabIndex = 2;
             this.tp_EditWorker.Text = "Редагувати ";
             // 
+            // rb_EditHiEd
+            // 
+            this.rb_EditHiEd.AutoSize = true;
+            this.rb_EditHiEd.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.rb_EditHiEd.Location = new System.Drawing.Point(444, 53);
+            this.rb_EditHiEd.Name = "rb_EditHiEd";
+            this.rb_EditHiEd.Size = new System.Drawing.Size(174, 33);
+            this.rb_EditHiEd.TabIndex = 16;
+            this.rb_EditHiEd.TabStop = true;
+            this.rb_EditHiEd.Text = "Вища освіта";
+            this.rb_EditHiEd.UseVisualStyleBackColor = true;
+            this.rb_EditHiEd.CheckedChanged += new System.EventHandler(this.rb_EditHiEd_CheckedChanged);
+            // 
+            // dtp_EditBDay
+            // 
+            this.dtp_EditBDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dtp_EditBDay.Location = new System.Drawing.Point(549, 167);
+            this.dtp_EditBDay.Name = "dtp_EditBDay";
+            this.dtp_EditBDay.Size = new System.Drawing.Size(239, 34);
+            this.dtp_EditBDay.TabIndex = 15;
+            this.dtp_EditBDay.ValueChanged += new System.EventHandler(this.dtp_EditBDay_ValueChanged);
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label21.Location = new System.Drawing.Point(439, 123);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(80, 29);
+            this.label21.TabIndex = 14;
+            this.label21.Text = "Стать";
+            // 
+            // cb_EditWorkerGender
+            // 
+            this.cb_EditWorkerGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_EditWorkerGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cb_EditWorkerGender.FormattingEnabled = true;
+            this.cb_EditWorkerGender.Items.AddRange(new object[] {
+            "Чоловіча",
+            "Жіноча"});
+            this.cb_EditWorkerGender.Location = new System.Drawing.Point(549, 119);
+            this.cb_EditWorkerGender.Name = "cb_EditWorkerGender";
+            this.cb_EditWorkerGender.Size = new System.Drawing.Size(121, 37);
+            this.cb_EditWorkerGender.TabIndex = 13;
+            this.cb_EditWorkerGender.SelectedIndexChanged += new System.EventHandler(this.cb_EditWorkerGender_SelectedIndexChanged);
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label20.Location = new System.Drawing.Point(330, 169);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(219, 29);
+            this.label20.TabIndex = 12;
+            this.label20.Text = "Дата народження";
+            // 
             // tb_SurNameWorker4Edit
             // 
             this.tb_SurNameWorker4Edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tb_SurNameWorker4Edit.Location = new System.Drawing.Point(311, 168);
+            this.tb_SurNameWorker4Edit.Location = new System.Drawing.Point(184, 164);
             this.tb_SurNameWorker4Edit.Name = "tb_SurNameWorker4Edit";
             this.tb_SurNameWorker4Edit.Size = new System.Drawing.Size(140, 34);
             this.tb_SurNameWorker4Edit.TabIndex = 11;
+            this.tb_SurNameWorker4Edit.TextChanged += new System.EventHandler(this.tb_SurNameWorker4Edit_TextChanged);
             // 
             // tb_NameWorker4Edit
             // 
             this.tb_NameWorker4Edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tb_NameWorker4Edit.Location = new System.Drawing.Point(311, 120);
+            this.tb_NameWorker4Edit.Location = new System.Drawing.Point(184, 116);
             this.tb_NameWorker4Edit.Name = "tb_NameWorker4Edit";
             this.tb_NameWorker4Edit.Size = new System.Drawing.Size(140, 34);
             this.tb_NameWorker4Edit.TabIndex = 10;
+            this.tb_NameWorker4Edit.TextChanged += new System.EventHandler(this.tb_NameWorker4Edit_TextChanged);
             // 
             // tb_LastNameWorker4Edit
             // 
             this.tb_LastNameWorker4Edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tb_LastNameWorker4Edit.Location = new System.Drawing.Point(311, 73);
+            this.tb_LastNameWorker4Edit.Location = new System.Drawing.Point(184, 69);
             this.tb_LastNameWorker4Edit.Name = "tb_LastNameWorker4Edit";
             this.tb_LastNameWorker4Edit.Size = new System.Drawing.Size(140, 34);
             this.tb_LastNameWorker4Edit.TabIndex = 9;
+            this.tb_LastNameWorker4Edit.TextChanged += new System.EventHandler(this.tb_LastNameWorker4Edit_TextChanged);
             // 
             // tb_IDworker4Edit
             // 
             this.tb_IDworker4Edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tb_IDworker4Edit.Location = new System.Drawing.Point(311, 22);
+            this.tb_IDworker4Edit.Location = new System.Drawing.Point(184, 18);
             this.tb_IDworker4Edit.Name = "tb_IDworker4Edit";
             this.tb_IDworker4Edit.Size = new System.Drawing.Size(69, 34);
             this.tb_IDworker4Edit.TabIndex = 8;
+            this.tb_IDworker4Edit.TextChanged += new System.EventHandler(this.tb_IDworker4Edit_TextChanged);
             // 
             // label19
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label19.Location = new System.Drawing.Point(150, 169);
+            this.label19.Location = new System.Drawing.Point(23, 165);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(142, 29);
             this.label19.TabIndex = 7;
@@ -451,7 +527,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label14.Location = new System.Drawing.Point(150, 123);
+            this.label14.Location = new System.Drawing.Point(23, 119);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(55, 29);
             this.label14.TabIndex = 6;
@@ -461,7 +537,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label13.Location = new System.Drawing.Point(150, 71);
+            this.label13.Location = new System.Drawing.Point(23, 67);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(125, 29);
             this.label13.TabIndex = 5;
@@ -471,31 +547,22 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label8.Location = new System.Drawing.Point(150, 27);
+            this.label8.Location = new System.Drawing.Point(23, 23);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(36, 29);
             this.label8.TabIndex = 4;
             this.label8.Text = "ID";
             // 
-            // btn_SearchWorker4Edit
-            // 
-            this.btn_SearchWorker4Edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btn_SearchWorker4Edit.Location = new System.Drawing.Point(147, 218);
-            this.btn_SearchWorker4Edit.Name = "btn_SearchWorker4Edit";
-            this.btn_SearchWorker4Edit.Size = new System.Drawing.Size(145, 38);
-            this.btn_SearchWorker4Edit.TabIndex = 3;
-            this.btn_SearchWorker4Edit.Text = "Знайти ";
-            this.btn_SearchWorker4Edit.UseVisualStyleBackColor = true;
-            // 
             // btn_EditWorker
             // 
             this.btn_EditWorker.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btn_EditWorker.Location = new System.Drawing.Point(311, 216);
+            this.btn_EditWorker.Location = new System.Drawing.Point(123, 220);
             this.btn_EditWorker.Name = "btn_EditWorker";
             this.btn_EditWorker.Size = new System.Drawing.Size(132, 38);
             this.btn_EditWorker.TabIndex = 2;
             this.btn_EditWorker.Text = "Змінити";
             this.btn_EditWorker.UseVisualStyleBackColor = true;
+            this.btn_EditWorker.Click += new System.EventHandler(this.btn_EditWorker_Click);
             // 
             // dgw_EditWorker
             // 
@@ -517,6 +584,7 @@
             this.dgw_EditWorker.RowTemplate.Height = 24;
             this.dgw_EditWorker.Size = new System.Drawing.Size(792, 141);
             this.dgw_EditWorker.TabIndex = 1;
+            this.dgw_EditWorker.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgw_EditWorker_CellContentClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -814,16 +882,16 @@
             this.pnl_MainMenu.Controls.Add(this.btn_Position);
             this.pnl_MainMenu.Controls.Add(this.btn_Reports);
             this.pnl_MainMenu.Controls.Add(this.btn_Workers);
-            this.pnl_MainMenu.Location = new System.Drawing.Point(254, 123);
+            this.pnl_MainMenu.Location = new System.Drawing.Point(298, 142);
             this.pnl_MainMenu.Name = "pnl_MainMenu";
-            this.pnl_MainMenu.Size = new System.Drawing.Size(32, 17);
+            this.pnl_MainMenu.Size = new System.Drawing.Size(69, 30);
             this.pnl_MainMenu.TabIndex = 6;
             // 
             // btn_Search
             // 
             this.btn_Search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Search.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btn_Search.Location = new System.Drawing.Point(340, 292);
+            this.btn_Search.Location = new System.Drawing.Point(435, 303);
             this.btn_Search.Name = "btn_Search";
             this.btn_Search.Size = new System.Drawing.Size(263, 41);
             this.btn_Search.TabIndex = 6;
@@ -834,7 +902,7 @@
             // 
             this.lbl_Date.AutoSize = true;
             this.lbl_Date.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lbl_Date.Location = new System.Drawing.Point(12, 197);
+            this.lbl_Date.Location = new System.Drawing.Point(107, 208);
             this.lbl_Date.Name = "lbl_Date";
             this.lbl_Date.Size = new System.Drawing.Size(0, 55);
             this.lbl_Date.TabIndex = 5;
@@ -843,7 +911,7 @@
             // 
             this.lbl_Time.AutoSize = true;
             this.lbl_Time.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lbl_Time.Location = new System.Drawing.Point(38, 86);
+            this.lbl_Time.Location = new System.Drawing.Point(133, 97);
             this.lbl_Time.Name = "lbl_Time";
             this.lbl_Time.Size = new System.Drawing.Size(0, 55);
             this.lbl_Time.TabIndex = 4;
@@ -852,7 +920,7 @@
             // 
             this.lbl_Notification.AutoSize = true;
             this.lbl_Notification.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lbl_Notification.Location = new System.Drawing.Point(12, 11);
+            this.lbl_Notification.Location = new System.Drawing.Point(16, 23);
             this.lbl_Notification.Name = "lbl_Notification";
             this.lbl_Notification.Size = new System.Drawing.Size(91, 32);
             this.lbl_Notification.TabIndex = 3;
@@ -862,7 +930,7 @@
             // 
             this.btn_Position.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Position.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btn_Position.Location = new System.Drawing.Point(340, 221);
+            this.btn_Position.Location = new System.Drawing.Point(435, 232);
             this.btn_Position.Name = "btn_Position";
             this.btn_Position.Size = new System.Drawing.Size(263, 41);
             this.btn_Position.TabIndex = 2;
@@ -874,7 +942,7 @@
             // 
             this.btn_Reports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Reports.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btn_Reports.Location = new System.Drawing.Point(340, 147);
+            this.btn_Reports.Location = new System.Drawing.Point(435, 158);
             this.btn_Reports.Name = "btn_Reports";
             this.btn_Reports.Size = new System.Drawing.Size(263, 41);
             this.btn_Reports.TabIndex = 1;
@@ -885,7 +953,7 @@
             // 
             this.btn_Workers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Workers.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btn_Workers.Location = new System.Drawing.Point(340, 72);
+            this.btn_Workers.Location = new System.Drawing.Point(435, 83);
             this.btn_Workers.Name = "btn_Workers";
             this.btn_Workers.Size = new System.Drawing.Size(263, 41);
             this.btn_Workers.TabIndex = 0;
@@ -1115,11 +1183,11 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button btn_AddWorkerAccept;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.RadioButton rb_AddWorkerHiEd;
+        private System.Windows.Forms.DateTimePicker dtp_AddWorkerBDay;
+        private System.Windows.Forms.TextBox tb_AddWorkerSurname;
+        private System.Windows.Forms.TextBox tb_AddWorkerLastName;
+        private System.Windows.Forms.TextBox tb_AddWorkerName;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TabPage tp_EditWorker;
         private System.Windows.Forms.TabPage tp_ShowWorkers;
@@ -1132,7 +1200,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn WorkerHiEdu;
         private System.Windows.Forms.DataGridViewTextBoxColumn WorkerGender;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cb_AddWorkerGender;
         private System.Windows.Forms.TabPage tp_HireWorker;
         private System.Windows.Forms.TabPage tp_FireWorker;
         private System.Windows.Forms.TextBox tb_SurNameWorker4Edit;
@@ -1143,7 +1211,6 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button btn_SearchWorker4Edit;
         private System.Windows.Forms.Button btn_EditWorker;
         private System.Windows.Forms.DataGridView dgw_EditWorker;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
@@ -1153,6 +1220,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.RadioButton rb_EditHiEd;
+        private System.Windows.Forms.DateTimePicker dtp_EditBDay;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.ComboBox cb_EditWorkerGender;
     }
 }
 
