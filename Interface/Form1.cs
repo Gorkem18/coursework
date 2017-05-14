@@ -181,6 +181,16 @@ namespace Interface
             pnl_MainMenu.Hide();
             pnl_Workers.Dock = DockStyle.Fill;
             pnl_Workers.Show();
+
+            string query4ShowAll = "select * from Кадри";
+
+            SqlCommand cmdShowWorkers = new SqlCommand(query4ShowAll, connect);
+            SqlDataReader reader = cmdShowWorkers.ExecuteReader();
+
+            while (reader.Read())
+            {
+                dgw_WorkersList.Rows.Add(reader[0], reader[1], reader[2], reader[3], reader[4], reader[5], reader[6]);
+            }
         }
 
         private void btn_Back2MainAP_Click(object sender, EventArgs e)
