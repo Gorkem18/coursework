@@ -122,6 +122,7 @@
             this.інформаціяПроКористувачаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.інформаціяПроРозробникаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tmr_Timer = new System.Windows.Forms.Timer(this.components);
+            this.btn_ClearEdit = new System.Windows.Forms.Button();
             this.pnl_Authorization.SuspendLayout();
             this.pnl_Workers.SuspendLayout();
             this.tc_Workers.SuspendLayout();
@@ -400,6 +401,7 @@
             // tp_EditWorker
             // 
             this.tp_EditWorker.BackColor = System.Drawing.Color.Honeydew;
+            this.tp_EditWorker.Controls.Add(this.btn_ClearEdit);
             this.tp_EditWorker.Controls.Add(this.rb_EditHiEd);
             this.tp_EditWorker.Controls.Add(this.dtp_EditBDay);
             this.tp_EditWorker.Controls.Add(this.label21);
@@ -1082,6 +1084,17 @@
             // 
             this.tmr_Timer.Tick += new System.EventHandler(this.tmr_Timer_Tick);
             // 
+            // btn_ClearEdit
+            // 
+            this.btn_ClearEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn_ClearEdit.Location = new System.Drawing.Point(307, 218);
+            this.btn_ClearEdit.Name = "btn_ClearEdit";
+            this.btn_ClearEdit.Size = new System.Drawing.Size(150, 40);
+            this.btn_ClearEdit.TabIndex = 17;
+            this.btn_ClearEdit.Text = "Очистити";
+            this.btn_ClearEdit.UseVisualStyleBackColor = true;
+            this.btn_ClearEdit.Click += new System.EventHandler(this.btn_ClearEdit_Click);
+            // 
             // Form1
             // 
             this.AcceptButton = this.btn_Confirm_Login;
@@ -1225,6 +1238,7 @@
         private System.Windows.Forms.DateTimePicker dtp_EditBDay;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.ComboBox cb_EditWorkerGender;
+        private System.Windows.Forms.Button btn_ClearEdit;
     }
 }
 

@@ -118,7 +118,7 @@ namespace Interface
             SqlConnectionStringBuilder connectStr = new SqlConnectionStringBuilder();
             connectStr.DataSource = @"BIFROST\SQLEXPRESS";
             connectStr.InitialCatalog = "HumanRecourcesDepartment";
-            connectStr.UserID = "Admin";
+            connectStr.UserID = "snow";
             connectStr.Password = "12345";
 
             connect = new SqlConnection(connectStr.ConnectionString);
@@ -233,7 +233,7 @@ namespace Interface
             else
             {
                 AddWorkerChangeColourMainEl(System.Drawing.Color.White);
-                string addNewWorker = "exec AddWorker'" + tb_AddWorkerLastName.Text + "', '"
+                string addNewWorker = "use HumanRecourcesDepartment exec AddWorker '" + tb_AddWorkerLastName.Text + "', '"
                                  + tb_AddWorkerName.Text + "', '" + tb_AddWorkerSurname.Text + "', '"
                                  + dtp_AddWorkerBDay.Value.Date + "', '" + rb_AddWorkerHiEd.Checked + "', '"
                                  + cb_AddWorkerGender.SelectedItem + "'";
@@ -262,7 +262,7 @@ namespace Interface
         {
             dgw_EditWorker.Rows.Clear();
 
-            string query4Search = "select * from Кадри where кодКадру like '" + tb_IDworker4Edit.Text +
+            string query4Search = "use HumanRecourcesDepartment select * from Кадри where кодКадру like '" + tb_IDworker4Edit.Text +
                 "%' and Прізвище  like '" + tb_LastNameWorker4Edit.Text + "%' and ім_я like '"
                 + tb_NameWorker4Edit.Text + "%' and поБатькові like '" + tb_SurNameWorker4Edit.Text + "%'" +
                 " and датаНародження like '%' and вищаОсвіта = '" +
@@ -307,14 +307,17 @@ namespace Interface
 
         private void dgw_EditWorker_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            tb_IDworker4Edit.Text = dgw_EditWorker.CurrentRow.Cells[0].Value.ToString();
-            tb_LastNameWorker4Edit.Text = dgw_EditWorker.CurrentRow.Cells[1].Value.ToString();
-            tb_NameWorker4Edit.Text = dgw_EditWorker.CurrentRow.Cells[2].Value.ToString();
-            tb_SurNameWorker4Edit.Text = dgw_EditWorker.CurrentRow.Cells[3].Value.ToString();
-            rb_EditHiEd.Checked = Convert.ToBoolean(dgw_EditWorker.CurrentRow.Cells[5].Value);
-            cb_EditWorkerGender.SelectedItem = dgw_EditWorker.CurrentRow.Cells[6].Value.ToString();
-            dtp_EditBDay.Value = Convert.ToDateTime(dgw_EditWorker.CurrentRow.Cells[4].Value);
-            tb_IDworker4Edit.Enabled = false;
+            if (dgw_EditWorker.CurrentRow != null)
+            {
+                tb_IDworker4Edit.Text = dgw_EditWorker.CurrentRow.Cells[0].Value.ToString();
+                tb_LastNameWorker4Edit.Text = dgw_EditWorker.CurrentRow.Cells[1].Value.ToString();
+                tb_NameWorker4Edit.Text = dgw_EditWorker.CurrentRow.Cells[2].Value.ToString();
+                tb_SurNameWorker4Edit.Text = dgw_EditWorker.CurrentRow.Cells[3].Value.ToString();
+                rb_EditHiEd.Checked = Convert.ToBoolean(dgw_EditWorker.CurrentRow.Cells[5].Value);
+                cb_EditWorkerGender.SelectedItem = dgw_EditWorker.CurrentRow.Cells[6].Value.ToString();
+                dtp_EditBDay.Value = Convert.ToDateTime(dgw_EditWorker.CurrentRow.Cells[4].Value);
+                tb_IDworker4Edit.Enabled = false;
+            }
         }
 
         private void rb_EditHiEd_CheckedChanged(object sender, EventArgs e)
@@ -334,10 +337,11 @@ namespace Interface
 
         private void btn_EditWorker_Click(object sender, EventArgs e)
         {
-            string queryUpdate = "exec UpdateWorker " + tb_IDworker4Edit.Text + ", " + tb_LastNameWorker4Edit.Text +
+            string queryUpdate = "use HumanRecourcesDepartment exec UpdateWorker " + tb_IDworker4Edit.Text + ", " + tb_LastNameWorker4Edit.Text +
                 ", " + tb_NameWorker4Edit.Text + ", " + tb_SurNameWorker4Edit.Text + ", '" + dtp_EditBDay.Value.Date +
                 "', " + rb_EditHiEd.Checked + ", " + cb_EditWorkerGender.SelectedItem;
 
+            
 
             SqlCommand cmdUpdate = new SqlCommand(queryUpdate, connect);
             cmdUpdate.ExecuteNonQuery();
@@ -357,6 +361,18 @@ namespace Interface
             dtp_EditBDay.Text = "";
             cb_EditWorkerGender.SelectedIndex = -1;
             rb_EditHiEd.Checked = false;
+        }
+
+        private void btn_ClearEdit_Click(object sender, EventArgs e)
+        {
+            tb_IDworker4Edit.Text = "";
+            tb_LastNameWorker4Edit.Text = "";
+            tb_NameWorker4Edit.Text = "";
+            tb_SurNameWorker4Edit.Text = "";
+            dtp_EditBDay.Value = DateTime.Now;
+            rb_EditHiEd.Checked = false;
+            cb_EditWorkerGender.SelectedIndex = -1;
+            tb_IDworker4Edit.Enabled = true;
         }
     }
 }
