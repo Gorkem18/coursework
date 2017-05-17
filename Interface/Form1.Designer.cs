@@ -138,6 +138,7 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tp_ShowWorking = new System.Windows.Forms.TabPage();
             this.pnl_Authorization.SuspendLayout();
             this.pnl_Workers.SuspendLayout();
             this.tc_Workers.SuspendLayout();
@@ -255,6 +256,7 @@
             this.tc_Workers.Controls.Add(this.tp_ShowWorkers);
             this.tc_Workers.Controls.Add(this.tp_HireWorker);
             this.tc_Workers.Controls.Add(this.tp_FireWorker);
+            this.tc_Workers.Controls.Add(this.tp_ShowWorking);
             this.tc_Workers.Location = new System.Drawing.Point(39, 5);
             this.tc_Workers.Name = "tc_Workers";
             this.tc_Workers.SelectedIndex = 0;
@@ -1258,6 +1260,15 @@
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
             // 
+            // tp_ShowWorking
+            // 
+            this.tp_ShowWorking.Location = new System.Drawing.Point(4, 28);
+            this.tp_ShowWorking.Name = "tp_ShowWorking";
+            this.tp_ShowWorking.Size = new System.Drawing.Size(788, 411);
+            this.tp_ShowWorking.TabIndex = 6;
+            this.tp_ShowWorking.Text = "Перегляд працюючих";
+            this.tp_ShowWorking.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AcceptButton = this.btn_Confirm_Login;
@@ -1422,6 +1433,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.TabPage tp_ShowWorking;
     }
 }
 
