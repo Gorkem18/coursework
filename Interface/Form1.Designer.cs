@@ -53,6 +53,7 @@
             this.tb_AddWorkerName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.tp_EditWorker = new System.Windows.Forms.TabPage();
+            this.btn_ClearEdit = new System.Windows.Forms.Button();
             this.rb_EditHiEd = new System.Windows.Forms.RadioButton();
             this.dtp_EditBDay = new System.Windows.Forms.DateTimePicker();
             this.label21 = new System.Windows.Forms.Label();
@@ -122,7 +123,21 @@
             this.інформаціяПроКористувачаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.інформаціяПроРозробникаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tmr_Timer = new System.Windows.Forms.Timer(this.components);
-            this.btn_ClearEdit = new System.Windows.Forms.Button();
+            this.dgw_NonHiredPositions = new System.Windows.Forms.DataGridView();
+            this.dgw_NonHiredWorkers = new System.Windows.Forms.DataGridView();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.dgw_ResultOfHire = new System.Windows.Forms.DataGridView();
+            this.btn_Hire = new System.Windows.Forms.Button();
+            this.btn_ClearMaybeHiredWorer = new System.Windows.Forms.Button();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnl_Authorization.SuspendLayout();
             this.pnl_Workers.SuspendLayout();
             this.tc_Workers.SuspendLayout();
@@ -131,12 +146,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgw_EditWorker)).BeginInit();
             this.tp_ShowWorkers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgw_WorkersList)).BeginInit();
+            this.tp_HireWorker.SuspendLayout();
             this.pnl_Position.SuspendLayout();
             this.pnl_MainMenu.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.ss_StatusStrip.SuspendLayout();
             this.ss_ConnectStrip.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgw_NonHiredPositions)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgw_NonHiredWorkers)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgw_ResultOfHire)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl_Authorization
@@ -423,6 +442,17 @@
             this.tp_EditWorker.TabIndex = 2;
             this.tp_EditWorker.Text = "Редагувати ";
             // 
+            // btn_ClearEdit
+            // 
+            this.btn_ClearEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn_ClearEdit.Location = new System.Drawing.Point(307, 218);
+            this.btn_ClearEdit.Name = "btn_ClearEdit";
+            this.btn_ClearEdit.Size = new System.Drawing.Size(150, 40);
+            this.btn_ClearEdit.TabIndex = 17;
+            this.btn_ClearEdit.Text = "Очистити";
+            this.btn_ClearEdit.UseVisualStyleBackColor = true;
+            this.btn_ClearEdit.Click += new System.EventHandler(this.btn_ClearEdit_Click);
+            // 
             // rb_EditHiEd
             // 
             this.rb_EditHiEd.AutoSize = true;
@@ -706,6 +736,14 @@
             // tp_HireWorker
             // 
             this.tp_HireWorker.BackColor = System.Drawing.Color.Honeydew;
+            this.tp_HireWorker.Controls.Add(this.btn_ClearMaybeHiredWorer);
+            this.tp_HireWorker.Controls.Add(this.btn_Hire);
+            this.tp_HireWorker.Controls.Add(this.label24);
+            this.tp_HireWorker.Controls.Add(this.dgw_ResultOfHire);
+            this.tp_HireWorker.Controls.Add(this.label23);
+            this.tp_HireWorker.Controls.Add(this.label22);
+            this.tp_HireWorker.Controls.Add(this.dgw_NonHiredWorkers);
+            this.tp_HireWorker.Controls.Add(this.dgw_NonHiredPositions);
             this.tp_HireWorker.Location = new System.Drawing.Point(4, 28);
             this.tp_HireWorker.Name = "tp_HireWorker";
             this.tp_HireWorker.Size = new System.Drawing.Size(788, 411);
@@ -1084,16 +1122,141 @@
             // 
             this.tmr_Timer.Tick += new System.EventHandler(this.tmr_Timer_Tick);
             // 
-            // btn_ClearEdit
+            // dgw_NonHiredPositions
             // 
-            this.btn_ClearEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btn_ClearEdit.Location = new System.Drawing.Point(307, 218);
-            this.btn_ClearEdit.Name = "btn_ClearEdit";
-            this.btn_ClearEdit.Size = new System.Drawing.Size(150, 40);
-            this.btn_ClearEdit.TabIndex = 17;
-            this.btn_ClearEdit.Text = "Очистити";
-            this.btn_ClearEdit.UseVisualStyleBackColor = true;
-            this.btn_ClearEdit.Click += new System.EventHandler(this.btn_ClearEdit_Click);
+            this.dgw_NonHiredPositions.AllowUserToAddRows = false;
+            this.dgw_NonHiredPositions.AllowUserToDeleteRows = false;
+            this.dgw_NonHiredPositions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgw_NonHiredPositions.Location = new System.Drawing.Point(8, 155);
+            this.dgw_NonHiredPositions.Name = "dgw_NonHiredPositions";
+            this.dgw_NonHiredPositions.ReadOnly = true;
+            this.dgw_NonHiredPositions.RowTemplate.Height = 24;
+            this.dgw_NonHiredPositions.Size = new System.Drawing.Size(772, 78);
+            this.dgw_NonHiredPositions.TabIndex = 0;
+            // 
+            // dgw_NonHiredWorkers
+            // 
+            this.dgw_NonHiredWorkers.AllowUserToAddRows = false;
+            this.dgw_NonHiredWorkers.AllowUserToDeleteRows = false;
+            this.dgw_NonHiredWorkers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgw_NonHiredWorkers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6,
+            this.Column7});
+            this.dgw_NonHiredWorkers.Location = new System.Drawing.Point(8, 35);
+            this.dgw_NonHiredWorkers.Name = "dgw_NonHiredWorkers";
+            this.dgw_NonHiredWorkers.ReadOnly = true;
+            this.dgw_NonHiredWorkers.RowTemplate.Height = 24;
+            this.dgw_NonHiredWorkers.Size = new System.Drawing.Size(772, 86);
+            this.dgw_NonHiredWorkers.TabIndex = 1;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label22.Location = new System.Drawing.Point(3, 0);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(279, 29);
+            this.label22.TabIndex = 2;
+            this.label22.Text = "Не найняті працівники";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label23.Location = new System.Drawing.Point(3, 124);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(173, 29);
+            this.label23.TabIndex = 3;
+            this.label23.Text = "Вільні посади";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label24.Location = new System.Drawing.Point(3, 245);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(132, 29);
+            this.label24.TabIndex = 5;
+            this.label24.Text = "Результат";
+            // 
+            // dgw_ResultOfHire
+            // 
+            this.dgw_ResultOfHire.AllowUserToAddRows = false;
+            this.dgw_ResultOfHire.AllowUserToDeleteRows = false;
+            this.dgw_ResultOfHire.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgw_ResultOfHire.Location = new System.Drawing.Point(8, 276);
+            this.dgw_ResultOfHire.Name = "dgw_ResultOfHire";
+            this.dgw_ResultOfHire.ReadOnly = true;
+            this.dgw_ResultOfHire.RowTemplate.Height = 24;
+            this.dgw_ResultOfHire.Size = new System.Drawing.Size(772, 78);
+            this.dgw_ResultOfHire.TabIndex = 4;
+            // 
+            // btn_Hire
+            // 
+            this.btn_Hire.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn_Hire.Location = new System.Drawing.Point(251, 367);
+            this.btn_Hire.Name = "btn_Hire";
+            this.btn_Hire.Size = new System.Drawing.Size(148, 41);
+            this.btn_Hire.TabIndex = 6;
+            this.btn_Hire.Text = "Найняти";
+            this.btn_Hire.UseVisualStyleBackColor = true;
+            // 
+            // btn_ClearMaybeHiredWorer
+            // 
+            this.btn_ClearMaybeHiredWorer.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn_ClearMaybeHiredWorer.Location = new System.Drawing.Point(414, 367);
+            this.btn_ClearMaybeHiredWorer.Name = "btn_ClearMaybeHiredWorer";
+            this.btn_ClearMaybeHiredWorer.Size = new System.Drawing.Size(148, 41);
+            this.btn_ClearMaybeHiredWorer.TabIndex = 7;
+            this.btn_ClearMaybeHiredWorer.Text = "Очистити";
+            this.btn_ClearMaybeHiredWorer.UseVisualStyleBackColor = true;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "кодКадру";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Прізвище";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Ім\'я";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "поБатькові";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "датаНародження";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "вищаОсвіта";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Стать";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
             // 
             // Form1
             // 
@@ -1126,6 +1289,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgw_EditWorker)).EndInit();
             this.tp_ShowWorkers.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgw_WorkersList)).EndInit();
+            this.tp_HireWorker.ResumeLayout(false);
+            this.tp_HireWorker.PerformLayout();
             this.pnl_Position.ResumeLayout(false);
             this.pnl_Position.PerformLayout();
             this.pnl_MainMenu.ResumeLayout(false);
@@ -1138,6 +1303,9 @@
             this.ss_ConnectStrip.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgw_NonHiredPositions)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgw_NonHiredWorkers)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgw_ResultOfHire)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1239,6 +1407,21 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.ComboBox cb_EditWorkerGender;
         private System.Windows.Forms.Button btn_ClearEdit;
+        private System.Windows.Forms.Button btn_Hire;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.DataGridView dgw_ResultOfHire;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.DataGridView dgw_NonHiredWorkers;
+        private System.Windows.Forms.DataGridView dgw_NonHiredPositions;
+        private System.Windows.Forms.Button btn_ClearMaybeHiredWorer;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
     }
 }
 

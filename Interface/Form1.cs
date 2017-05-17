@@ -198,6 +198,27 @@ namespace Interface
             pnl_Workers.Show();
 
             ShowAllWorkers();
+            LoadNonHiredWorkers();
+            LoadNonHiredPositions();
+        }
+
+        private void LoadNonHiredWorkers()
+        {
+            string qNonHiredWorkers = " exec notWorkingNow";
+            SqlCommand cmdNonHiredWorkers = new SqlCommand(qNonHiredWorkers, connect);
+            SqlDataReader reader = cmdNonHiredWorkers.ExecuteReader();
+
+            while(reader.Read())
+            {
+                dgw_NonHiredWorkers.Rows.Add(reader[0], reader[1], reader[2], reader[3], reader[4], reader[5], reader[6]);
+            }
+
+            reader.Close();
+        }
+
+        private void LoadNonHiredPositions()
+        {
+
         }
 
         private void btn_Back2MainAP_Click(object sender, EventArgs e)
