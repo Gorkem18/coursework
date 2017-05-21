@@ -6,11 +6,17 @@ using System.Windows.Forms;
 
 namespace Interface
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         SqlConnection connect = null;
+        DataGridViewRow hireWorkerRow = null;
+        DataGridViewRow hirePositionRow = null;
+        DataGridViewRow fireWorker = null;
+        public bool indicatorHireWorker = false;
+        bool HiEdIndi4Search = false;
+        public bool fireWorkerIndi = false;
 
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
             tmr_ClearStatus.Interval = 10000;
@@ -24,10 +30,10 @@ namespace Interface
         private void HideAll()
         {
             pnl_Position.Hide();
-            //pnl_ShowReports.Hide();
+            pnl_ShowReports.Hide();
             pnl_Workers.Hide();
             pnl_MainMenu.Hide();
-            //pnl_Search.Hide();
+            pnl_Search.Hide();
             pnl_Authorization.Hide();
         }
 
@@ -109,6 +115,7 @@ namespace Interface
             ts_StatusLabel.Text = "Авторизація пройшла успішно";
             tmr_ClearStatus.Enabled = true;
             інформаціяПроКористувачаToolStripMenuItem.Enabled = true;
+            tsmi_Refresh.Enabled = true;
 
             DBconnect();
         }
@@ -116,7 +123,7 @@ namespace Interface
         private void DBconnect()
         {
             SqlConnectionStringBuilder connectStr = new SqlConnectionStringBuilder();
-            connectStr.DataSource = @"BIFROST\SQLEXPRESS";
+            connectStr.DataSource = @"localhost\SQLEXPRESS";
             connectStr.InitialCatalog = "HumanRecourcesDepartment";
             connectStr.UserID = "snow";
             connectStr.Password = "12345";
@@ -166,7 +173,7 @@ namespace Interface
 
         private void btn_Back2Main_Click(object sender, EventArgs e)
         {
-            dgw_WorkersList.Rows.Clear();
+            
             pnl_Workers.Hide();
             pnl_MainMenu.Show();
         }
@@ -178,6 +185,7 @@ namespace Interface
 
         private void ShowAllWorkers()
         {
+            dgw_WorkersList.Rows.Clear();
             string query4ShowAll = "select * from Кадри";
 
             SqlCommand cmdShowWorkers = new SqlCommand(query4ShowAll, connect);
@@ -187,6 +195,7 @@ namespace Interface
             {
                 dgw_WorkersList.Rows.Add(reader[0], reader[1], reader[2], reader[3], reader[4], reader[5], reader[6]);
             }
+
             reader.Close();
         }
 
@@ -200,10 +209,12 @@ namespace Interface
             ShowAllWorkers();
             LoadNonHiredWorkers();
             LoadNonHiredPositions();
+            ShowWorkingNow();
         }
 
         private void LoadNonHiredWorkers()
         {
+            dgw_NonHiredWorkers.Rows.Clear();
             string qNonHiredWorkers = " exec notWorkingNow";
             SqlCommand cmdNonHiredWorkers = new SqlCommand(qNonHiredWorkers, connect);
             SqlDataReader reader = cmdNonHiredWorkers.ExecuteReader();
@@ -218,7 +229,17 @@ namespace Interface
 
         private void LoadNonHiredPositions()
         {
+            dgw_NonHiredPositions.Rows.Clear();
+            string query = "select * from nonhiredposts";
+            SqlCommand cmdNonHired = new SqlCommand(query, connect);
+            SqlDataReader reader = cmdNonHired.ExecuteReader();
 
+            while(reader.Read())
+            {
+                dgw_NonHiredPositions.Rows.Add(reader[0], reader[1], reader[2], reader[3]);
+            }
+
+            reader.Close();
         }
 
         private void btn_Back2MainAP_Click(object sender, EventArgs e)
@@ -232,6 +253,7 @@ namespace Interface
             pnl_MainMenu.Hide();
             pnl_Position.Dock = DockStyle.Fill;
             pnl_Position.Show();
+            ShowAllPositions();
         }
 
         private void AddWorkerChangeColourMainEl(System.Drawing.Color color)
@@ -282,12 +304,18 @@ namespace Interface
         private void WorkerEditShowWorkers()
         {
             dgw_EditWorker.Rows.Clear();
+            string gender = "";
 
-            string query4Search = "use HumanRecourcesDepartment select * from Кадри where кодКадру like '" + tb_IDworker4Edit.Text +
+            if(cb_EditWorkerGender.SelectedIndex != -1)
+            {
+                gender = cb_EditWorkerGender.SelectedItem.ToString();
+            }
+
+            string query4Search = "select * from Кадри where кодКадру like '" + tb_IDworker4Edit.Text +
                 "%' and Прізвище  like '" + tb_LastNameWorker4Edit.Text + "%' and ім_я like '"
                 + tb_NameWorker4Edit.Text + "%' and поБатькові like '" + tb_SurNameWorker4Edit.Text + "%'" +
                 " and датаНародження like '%' and вищаОсвіта = '" +
-                rb_EditHiEd.Checked + "' and Стать like '" + cb_EditWorkerGender.SelectedItem + "%'";
+                rb_EditHiEd.Checked + "' and Стать like '" + gender + "%'";
             Clipboard.SetText(query4Search);
 
             SqlCommand cmdSearch4Edit = new SqlCommand(query4Search, connect);
@@ -297,13 +325,13 @@ namespace Interface
             {
                 dgw_EditWorker.Rows.Add(reader[0], reader[1], reader[2], reader[3], reader[4], reader[5], reader[6]);
             }
-
             reader.Close();
             if (tb_IDworker4Edit.Text == "" && tb_LastNameWorker4Edit.Text == "" && tb_NameWorker4Edit.Text == ""
-                && tb_SurNameWorker4Edit.Text == "")
+                && tb_SurNameWorker4Edit.Text == "" && cb_EditWorkerGender.SelectedIndex == -1 )
             {
                 dgw_EditWorker.Rows.Clear();
             }
+            
         }
 
         private void tb_IDworker4Edit_TextChanged(object sender, EventArgs e)
@@ -379,9 +407,11 @@ namespace Interface
             tb_LastNameWorker4Edit.Text = "";
             tb_NameWorker4Edit.Text = "";
             tb_SurNameWorker4Edit.Text = "";
-            dtp_EditBDay.Text = "";
             cb_EditWorkerGender.SelectedIndex = -1;
             rb_EditHiEd.Checked = false;
+            dtp_EditBDay.Value = DateTime.Now.Date;
+            
+            dgw_EditWorker.Rows.Clear();
         }
 
         private void btn_ClearEdit_Click(object sender, EventArgs e)
@@ -393,7 +423,350 @@ namespace Interface
             dtp_EditBDay.Value = DateTime.Now;
             rb_EditHiEd.Checked = false;
             cb_EditWorkerGender.SelectedIndex = -1;
-            tb_IDworker4Edit.Enabled = true;
+        }
+
+        private void btn_Hire_Click(object sender, EventArgs e)
+        {
+            if(hirePositionRow != null && hirePositionRow != null)
+            {
+                HireWorkerAccept hwa = new HireWorkerAccept(Convert.ToInt32(hireWorkerRow.Cells[0].Value),
+                    Convert.ToInt32(hirePositionRow.Cells[0].Value), connect, this);
+                hwa.ShowDialog();
+                if(indicatorHireWorker)
+                    ts_StatusLabel.Text = "Працівника найнято";
+
+                indicatorHireWorker = false;
+            }
+            else
+            {
+                MessageBox.Show("Не вибраний користувач або посада");
+            }
+        }
+
+        private void dgw_NonHiredWorkers_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            hireWorkerRow = dgw_NonHiredWorkers.CurrentRow;
+            lbl_HireWorkersindiWorker.Text = "Вибрано";
+        }
+
+        private void dgw_NonHiredPositions_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            hirePositionRow = dgw_NonHiredPositions.CurrentRow;
+            lbl_HireWorkerindiPos.Text = "Вибрано";
+        }
+
+        private void btn_ClearMaybeHiredWorer_Click(object sender, EventArgs e)
+        {
+            dgw_NonHiredWorkers.ClearSelection();
+            dgw_NonHiredPositions.ClearSelection();
+            hirePositionRow = null;
+            hireWorkerRow = null;
+            lbl_HireWorkerindiPos.Text = "";
+            lbl_HireWorkersindiWorker.Text = "";
+        }
+
+        private void tsmi_Refresh_Click(object sender, EventArgs e)
+        {
+            ShowAllWorkers();
+            LoadNonHiredPositions();
+            LoadNonHiredWorkers();
+            ShowWorkingNow();
+            ShowAllPositions();
+        }
+
+        private void ShowWorkingNow()
+        {
+            dgw_ShowWorkingNow.Rows.Clear();
+            string qShowWorkingNow = "select * from NowWorkingView";
+            SqlCommand cmdWorkingNow = new SqlCommand(qShowWorkingNow, connect);
+            SqlDataReader reader = cmdWorkingNow.ExecuteReader();
+
+            while(reader.Read())
+            {
+                dgw_ShowWorkingNow.Rows.Add(reader[0], reader[1], reader[2], reader[3],
+                                            reader[4], reader[5], reader[6], reader[7], reader[8]);
+            }
+            reader.Close();
+        }
+
+        private void btn_AddPositionAccept_Click(object sender, EventArgs e)
+        {
+            if(tb_AddPositionNameOfPosition.Text != "" && tb_AddPositionpayment.Text != "")
+            {
+                string qAddPosition = "exec AddNewPosition " + tb_AddPositionNameOfPosition.Text + ", "
+                + tb_AddPositionpayment.Text + ", " + rb_AddPositionHiEdRequires.Checked;
+                SqlCommand cmdAddPos = new SqlCommand(qAddPosition, connect);
+                cmdAddPos.ExecuteNonQuery();
+                ts_StatusLabel.Text = "Посаду додано";
+                tmr_ClearStatus.Enabled = true;
+                AddPositionClear();
+            }
+            else
+            {
+                MessageBox.Show("Не заповнені основні поля");
+                tb_AddPositionNameOfPosition.BackColor = System.Drawing.Color.LightPink;
+                tb_AddPositionpayment.BackColor = System.Drawing.Color.LightPink;
+            }
+        }
+
+        private void AddPositionClear()
+        {
+            tb_AddPositionNameOfPosition.Text = "";
+            tb_AddPositionpayment.Text = "";
+            rb_AddPositionHiEdRequires.Checked = false;
+            tb_AddPositionNameOfPosition.BackColor = System.Drawing.Color.White;
+            tb_AddPositionpayment.BackColor = System.Drawing.Color.White;
+        }
+
+        private void ShowAllPositions()
+        {
+            dgw_ShowAllPosition.Rows.Clear();
+            string qShowAllPositions = "select * from штатнийрозпис";
+            SqlCommand cmdShowAllPositions = new SqlCommand(qShowAllPositions, connect);
+            SqlDataReader reader = cmdShowAllPositions.ExecuteReader();
+
+            while(reader.Read())
+            {
+                dgw_ShowAllPosition.Rows.Add(reader[0], reader[1], reader[2], reader[3]);
+            }
+
+            reader.Close();
+        }
+
+        private void btn_Search_Click(object sender, EventArgs e)
+        {
+            pnl_MainMenu.Hide();
+            pnl_Search.Dock = DockStyle.Fill;
+            pnl_Search.Show();
+        }
+
+        private void btn_Back2MainSearch_Click(object sender, EventArgs e)
+        {
+            pnl_Search.Hide();
+            pnl_MainMenu.Show();
+        }
+
+        private void tb_SearchID_TextChanged(object sender, EventArgs e)
+        {
+            SearchWorker();
+        }
+
+        private void tb_SearchLastName_TextChanged(object sender, EventArgs e)
+        {
+            SearchWorker();
+        }
+
+        private void tb_SearchName_TextChanged(object sender, EventArgs e)
+        {
+            SearchWorker();
+        }
+
+        private void tb_SearchSurName_TextChanged(object sender, EventArgs e)
+        {
+            SearchWorker();
+        }
+
+        private void rb_SearchHiEd_CheckedChanged(object sender, EventArgs e)
+        {
+            HiEdIndi4Search = true;
+            SearchWorker();
+        }
+
+        private void cb_SearchGender_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SearchWorker();
+        }
+
+        private void SearchWorker()
+        {
+            dgw_Search.Rows.Clear();
+
+            string gender = "";
+            if (cb_SearchGender.SelectedIndex != -1)
+            {
+                gender = cb_SearchGender.SelectedItem.ToString();
+            }
+
+            string SearchQuery = "select * from Кадри where кодКадру like '" + tb_SearchID.Text +
+                "%' and прізвище like '" + tb_SearchLastName.Text + "%'and ім_я like '" + tb_SearchName.Text +
+                "%'and побатькові like '" + tb_SearchSurName.Text + "%'and вищаосвіта = '" + rb_SearchHiEd.Checked +
+                "' and стать like '" + gender + "%' ";
+            SqlCommand cmdSearch = new SqlCommand(SearchQuery, connect);
+            SqlDataReader reader = cmdSearch.ExecuteReader();
+
+            Clipboard.SetText(SearchQuery);
+
+            while(reader.Read())
+            {
+                dgw_Search.Rows.Add(reader[0], reader[1], reader[2], reader[3], reader[4], reader[5], reader[6]);
+            }
+            reader.Close();
+
+            if(tb_SearchID.Text == "" &&tb_SearchLastName.Text =="" && tb_SearchName.Text == "" && tb_SearchSurName.Text == ""
+                && cb_SearchGender.SelectedIndex == -1 && HiEdIndi4Search == false)
+            {
+                dgw_Search.Rows.Clear();
+            }
+        }
+
+        private void btn_SearchClear_Click(object sender, EventArgs e)
+        {
+            tb_SearchID.Text = "";
+            tb_SearchLastName.Text = "";
+            tb_SearchName.Text = "";
+            tb_SearchSurName.Text = "";
+            cb_SearchGender.SelectedIndex = -1;
+            rb_SearchHiEd.Checked = false;
+            dtp_SearchBDay.Value = DateTime.Now.Date;
+            HiEdIndi4Search = false;
+            dgw_Search.Rows.Clear();
+        }
+
+        private void dgw_Search_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            tb_SearchID.Text = dgw_Search.CurrentRow.Cells[0].Value.ToString();
+            tb_SearchLastName.Text = dgw_Search.CurrentRow.Cells[1].Value.ToString();
+            tb_SearchName.Text = dgw_Search.CurrentRow.Cells[2].Value.ToString();
+            tb_SearchSurName.Text = dgw_Search.CurrentRow.Cells[3].Value.ToString();
+            dtp_SearchBDay.Value = Convert.ToDateTime(dgw_Search.CurrentRow.Cells[4].Value);
+            rb_SearchHiEd.Checked = Convert.ToBoolean(dgw_Search.CurrentRow.Cells[5].Value);
+            cb_SearchGender.SelectedItem = dgw_Search.CurrentRow.Cells[6].Value.ToString();
+        }
+
+        private void btn_Back2MainSowRep_Click(object sender, EventArgs e)
+        {
+            pnl_ShowReports.Hide();
+            pnl_MainMenu.Show();
+        }
+
+        private void btn_Reports_Click(object sender, EventArgs e)
+        {
+            pnl_MainMenu.Hide();
+            pnl_ShowReports.Dock = DockStyle.Fill;
+            pnl_ShowReports.Show();
+        }
+
+        private void btn_ShowDaysWorkedAndLeft_Click(object sender, EventArgs e)
+        {
+            dgw_ShowReports.Rows.Clear();
+            dgw_ShowReports.Columns.Clear();
+
+            dgw_ShowReports.Columns.Add("idWorker", "кодКадру");
+            dgw_ShowReports.Columns.Add("idRegistr", "кодРеєстрації");
+            dgw_ShowReports.Columns.Add("idPosition", "кодПосади");
+            dgw_ShowReports.Columns.Add("lastName", "Прізвище");
+            dgw_ShowReports.Columns.Add("Name", "Ім'я");
+            dgw_ShowReports.Columns.Add("Surname", "поБатькові");
+            dgw_ShowReports.Columns.Add("onPosition", "Відпрацьовано");
+            dgw_ShowReports.Columns.Add("daysLeft", "Лишилось");
+
+            string qShowDays = "exec daysworkedandleft";
+            SqlCommand cmdShowDays = new SqlCommand(qShowDays, connect);
+            SqlDataReader reader = cmdShowDays.ExecuteReader();
+
+            while(reader.Read())
+            {
+                dgw_ShowReports.Rows.Add(reader[0], reader[1], reader[2], reader[3],
+                                         reader[4], reader[5], reader[6], reader[7]);
+            }
+            reader.Close();
+        }
+
+        private void btn_PaymentOfWorkers_Click(object sender, EventArgs e)
+        {
+            dgw_ShowReports.Rows.Clear();
+            dgw_ShowReports.Columns.Clear();
+
+            dgw_ShowReports.Columns.Add("idRegistr", "кодРеєстрації");
+            dgw_ShowReports.Columns.Add("lastName", "Прізвище");
+            dgw_ShowReports.Columns.Add("Name", "Ім'я");
+            dgw_ShowReports.Columns.Add("Surname", "поБатькові");
+            dgw_ShowReports.Columns.Add("nameOfPosition", "назваПосади");
+            dgw_ShowReports.Columns.Add("Payment", "Ставка");
+
+            string qShowPayment = "exec paymentofworkers";
+            SqlCommand cmdShowPayment = new SqlCommand(qShowPayment, connect);
+            SqlDataReader reader = cmdShowPayment.ExecuteReader();
+
+            while(reader.Read())
+            {
+                dgw_ShowReports.Rows.Add(reader[0], reader[1], reader[2], reader[3], reader[4],
+                                         reader[5]);
+            }
+            reader.Close();
+        }
+
+        private void btn_NumOfContracts_Click(object sender, EventArgs e)
+        {
+            dgw_ShowReports.Rows.Clear();
+            dgw_ShowReports.Columns.Clear();
+
+            dgw_ShowReports.Columns.Add("idRegistr", "кодРеєстрації");
+            dgw_ShowReports.Columns.Add("lastName", "Прізвище");
+            dgw_ShowReports.Columns.Add("Name", "Ім'я");
+            dgw_ShowReports.Columns.Add("Surname", "поБатькові");
+            dgw_ShowReports.Columns.Add("numOfContr", "укладеноКонтрактів");
+
+            string qShowNumContr = "exec numberofContracts";
+            SqlCommand cmdNumContr = new SqlCommand(qShowNumContr, connect);
+            SqlDataReader reader = cmdNumContr.ExecuteReader();
+
+            while(reader.Read())
+            {
+                dgw_ShowReports.Rows.Add(reader[0], reader[1], reader[2], reader[3], reader[4]);
+            }
+            reader.Close();
+        }
+
+        private void tb_WorkersFireWorkerID_TextChanged(object sender, EventArgs e)
+        {
+            dgw_WorkersFireWorker.Rows.Clear();
+
+            string qWorkers4Fire = "select * from кадри where кодКадру like '" + tb_WorkersFireWorkerID.Text+ "%'";
+            SqlCommand cmdShowWorkers4Fire = new SqlCommand(qWorkers4Fire, connect);
+            SqlDataReader reader = cmdShowWorkers4Fire.ExecuteReader();
+
+            while(reader.Read())
+            {
+                dgw_WorkersFireWorker.Rows.Add(reader[0], reader[1], reader[2], reader[3],
+                                               reader[4], reader[5], reader[6]);
+            }
+            reader.Close();
+
+            if(tb_WorkersFireWorkerID.Text == "")
+            {
+                dgw_WorkersFireWorker.Rows.Clear();
+            }
+        }
+
+        private void dgw_WorkersFireWorker_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            fireWorker = dgw_WorkersFireWorker.CurrentRow;
+            lbl_Worker4FirePicked.Text = "Працівника вибрано";
+            dgw_WorkersFireWorker.Rows.Clear();
+            tb_WorkersFireWorkerID.Text = "";
+        }
+
+        private void btn_ClearChoice4Fire_Click(object sender, EventArgs e)
+        {
+            fireWorker = null;
+            lbl_Worker4FirePicked.Text = "";
+            tb_WorkersFireWorkerID.Text = "";
+        }
+
+        private void btn_FireWorker_Click(object sender, EventArgs e)
+        {
+            FireWorkerAccept fireWorkerForm = new FireWorkerAccept(this);
+            fireWorkerForm.ShowDialog();
+
+            if(fireWorkerIndi)
+            {
+
+            }
+            else
+            {
+                btn_ClearChoice4Fire_Click(null, null);
+            }
         }
     }
 }
