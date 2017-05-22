@@ -761,7 +761,59 @@ namespace Interface
 
             if(fireWorkerIndi)
             {
+                int size = 0;
+                int i = 0;
 
+                string qLookAllRegisters = "select * from реєстрація where кодкадру = " + fireWorker.Cells[0].Value;
+                SqlCommand cmdLookAllRegisters = new SqlCommand(qLookAllRegisters, connect);
+                SqlDataReader reader = cmdLookAllRegisters.ExecuteReader();
+
+                while(reader.Read())
+                {
+                    size++;
+                }
+                reader.Close();
+                reader = cmdLookAllRegisters.ExecuteReader();
+
+                string[] qAddRegisters2Table = new string[size];
+
+                while(reader.Read())
+                {
+                    qAddRegisters2Table[i] = "insert into РеєстраціїЗвільненихПрацівників(кодРеєстрації, кодКадру, кодПосади, Ставка, датаЗатвердження, датаЗакінченняКонтракту) " +
+                        "values(" + reader[0] + ", " + reader[1] + ", " + reader[2] + ", " + reader[3] + ", '" + reader[4] + "', " +
+                        "'" + reader[5] + "')";
+                    i++;
+                }
+
+                reader.Close();
+
+                for (int j = 0;j < qAddRegisters2Table.Length; j++)
+                {
+                    SqlCommand cmdIns = new SqlCommand(qAddRegisters2Table[j], connect);
+                    cmdIns.ExecuteNonQuery();
+                }
+
+                string qDelWorkersRegistr = "use humanrecourcesdepartment delete from Реєстрація where кодКадру = " + fireWorker.Cells[0].Value;
+                SqlCommand cmdDelRegistr = new SqlCommand(qDelWorkersRegistr, connect);
+                cmdDelRegistr.ExecuteNonQuery();
+
+                string qAddWorker2Archive = "use humanrecourcesdepartment insert into Архів ( кодкадру, прізвище, ім_я," +
+                    " побатькові, датанародження, вищаосвіта, стать, датазвільнення)" +
+                    " values( " + fireWorker.Cells[0].Value + ", '" + fireWorker.Cells[1].Value +
+                    "', '" + fireWorker.Cells[2].Value + "', '" + fireWorker.Cells[3].Value +
+                    "', '" + fireWorker.Cells[4].Value + "', '" + fireWorker.Cells[5].Value +
+                    "', '" + fireWorker.Cells[6].Value + "', '" + DateTime.Now.Date + "')";
+
+                SqlCommand cmdAdd2Arch = new SqlCommand(qAddWorker2Archive, connect);
+                cmdAdd2Arch.ExecuteNonQuery();
+
+                string qDelWorkerWorker = "use humanrecourcesdepartment delete from кадри where кодКадру = " + fireWorker.Cells[0].Value;
+                SqlCommand cmdDelFromWorker = new SqlCommand(qDelWorkerWorker, connect);
+                cmdDelFromWorker.ExecuteNonQuery();
+
+                tb_WorkersFireWorkerID.Text = "";
+                ts_StatusLabel.Text = "Працівника звільнено";
+                btn_ClearChoice4Fire_Click(null, null);
             }
             else
             {
