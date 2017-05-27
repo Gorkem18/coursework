@@ -106,6 +106,19 @@
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tp_FireWorker = new System.Windows.Forms.TabPage();
+            this.btn_ClearChoice4Fire = new System.Windows.Forms.Button();
+            this.lbl_Worker4FirePicked = new System.Windows.Forms.Label();
+            this.btn_FireWorker = new System.Windows.Forms.Button();
+            this.label29 = new System.Windows.Forms.Label();
+            this.tb_WorkersFireWorkerID = new System.Windows.Forms.TextBox();
+            this.dgw_WorkersFireWorker = new System.Windows.Forms.DataGridView();
+            this.Column25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tp_ShowWorking = new System.Windows.Forms.TabPage();
             this.dgw_ShowWorkingNow = new System.Windows.Forms.DataGridView();
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -186,24 +199,11 @@
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_Back2MainSearch = new System.Windows.Forms.Button();
             this.pnl_ShowReports = new System.Windows.Forms.Panel();
+            this.btn_NumOfContracts = new System.Windows.Forms.Button();
+            this.btn_PaymentOfWorkers = new System.Windows.Forms.Button();
+            this.btn_ShowDaysWorkedAndLeft = new System.Windows.Forms.Button();
             this.dgw_ShowReports = new System.Windows.Forms.DataGridView();
             this.btn_Back2MainSowRep = new System.Windows.Forms.Button();
-            this.btn_ShowDaysWorkedAndLeft = new System.Windows.Forms.Button();
-            this.btn_PaymentOfWorkers = new System.Windows.Forms.Button();
-            this.btn_NumOfContracts = new System.Windows.Forms.Button();
-            this.dgw_WorkersFireWorker = new System.Windows.Forms.DataGridView();
-            this.tb_WorkersFireWorkerID = new System.Windows.Forms.TextBox();
-            this.label29 = new System.Windows.Forms.Label();
-            this.btn_FireWorker = new System.Windows.Forms.Button();
-            this.Column25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lbl_Worker4FirePicked = new System.Windows.Forms.Label();
-            this.btn_ClearChoice4Fire = new System.Windows.Forms.Button();
             this.pnl_Authorization.SuspendLayout();
             this.pnl_Workers.SuspendLayout();
             this.tc_Workers.SuspendLayout();
@@ -216,6 +216,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgw_NonHiredWorkers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgw_NonHiredPositions)).BeginInit();
             this.tp_FireWorker.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgw_WorkersFireWorker)).BeginInit();
             this.tp_ShowWorking.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgw_ShowWorkingNow)).BeginInit();
             this.pnl_Position.SuspendLayout();
@@ -232,7 +233,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgw_Search)).BeginInit();
             this.pnl_ShowReports.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgw_ShowReports)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgw_WorkersFireWorker)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl_Authorization
@@ -1006,6 +1006,119 @@
             this.tp_FireWorker.TabIndex = 5;
             this.tp_FireWorker.Text = "Звільнити";
             // 
+            // btn_ClearChoice4Fire
+            // 
+            this.btn_ClearChoice4Fire.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn_ClearChoice4Fire.Location = new System.Drawing.Point(339, 105);
+            this.btn_ClearChoice4Fire.Name = "btn_ClearChoice4Fire";
+            this.btn_ClearChoice4Fire.Size = new System.Drawing.Size(224, 42);
+            this.btn_ClearChoice4Fire.TabIndex = 5;
+            this.btn_ClearChoice4Fire.Text = "Очистити вибір";
+            this.btn_ClearChoice4Fire.UseVisualStyleBackColor = true;
+            this.btn_ClearChoice4Fire.Click += new System.EventHandler(this.btn_ClearChoice4Fire_Click);
+            // 
+            // lbl_Worker4FirePicked
+            // 
+            this.lbl_Worker4FirePicked.AutoSize = true;
+            this.lbl_Worker4FirePicked.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbl_Worker4FirePicked.Location = new System.Drawing.Point(222, 14);
+            this.lbl_Worker4FirePicked.Name = "lbl_Worker4FirePicked";
+            this.lbl_Worker4FirePicked.Size = new System.Drawing.Size(0, 29);
+            this.lbl_Worker4FirePicked.TabIndex = 4;
+            // 
+            // btn_FireWorker
+            // 
+            this.btn_FireWorker.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn_FireWorker.Location = new System.Drawing.Point(165, 105);
+            this.btn_FireWorker.Name = "btn_FireWorker";
+            this.btn_FireWorker.Size = new System.Drawing.Size(147, 42);
+            this.btn_FireWorker.TabIndex = 3;
+            this.btn_FireWorker.Text = "Звільнити";
+            this.btn_FireWorker.UseVisualStyleBackColor = true;
+            this.btn_FireWorker.Click += new System.EventHandler(this.btn_FireWorker_Click);
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label29.Location = new System.Drawing.Point(160, 53);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(194, 29);
+            this.label29.TabIndex = 2;
+            this.label29.Text = "Код працівника";
+            // 
+            // tb_WorkersFireWorkerID
+            // 
+            this.tb_WorkersFireWorkerID.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tb_WorkersFireWorkerID.Location = new System.Drawing.Point(383, 50);
+            this.tb_WorkersFireWorkerID.Name = "tb_WorkersFireWorkerID";
+            this.tb_WorkersFireWorkerID.Size = new System.Drawing.Size(138, 34);
+            this.tb_WorkersFireWorkerID.TabIndex = 1;
+            this.tb_WorkersFireWorkerID.TextChanged += new System.EventHandler(this.tb_WorkersFireWorkerID_TextChanged);
+            // 
+            // dgw_WorkersFireWorker
+            // 
+            this.dgw_WorkersFireWorker.AllowUserToAddRows = false;
+            this.dgw_WorkersFireWorker.AllowUserToDeleteRows = false;
+            this.dgw_WorkersFireWorker.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgw_WorkersFireWorker.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column25,
+            this.Column26,
+            this.Column27,
+            this.Column28,
+            this.Column29,
+            this.Column30,
+            this.Column31});
+            this.dgw_WorkersFireWorker.Location = new System.Drawing.Point(0, 169);
+            this.dgw_WorkersFireWorker.Name = "dgw_WorkersFireWorker";
+            this.dgw_WorkersFireWorker.ReadOnly = true;
+            this.dgw_WorkersFireWorker.RowTemplate.Height = 24;
+            this.dgw_WorkersFireWorker.Size = new System.Drawing.Size(788, 239);
+            this.dgw_WorkersFireWorker.TabIndex = 0;
+            this.dgw_WorkersFireWorker.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgw_WorkersFireWorker_CellContentClick);
+            // 
+            // Column25
+            // 
+            this.Column25.HeaderText = "кодКадру";
+            this.Column25.Name = "Column25";
+            this.Column25.ReadOnly = true;
+            // 
+            // Column26
+            // 
+            this.Column26.HeaderText = "Прізвище";
+            this.Column26.Name = "Column26";
+            this.Column26.ReadOnly = true;
+            // 
+            // Column27
+            // 
+            this.Column27.HeaderText = "Ім\'я";
+            this.Column27.Name = "Column27";
+            this.Column27.ReadOnly = true;
+            // 
+            // Column28
+            // 
+            this.Column28.HeaderText = "поБатькові";
+            this.Column28.Name = "Column28";
+            this.Column28.ReadOnly = true;
+            // 
+            // Column29
+            // 
+            this.Column29.HeaderText = "датаНародження";
+            this.Column29.Name = "Column29";
+            this.Column29.ReadOnly = true;
+            // 
+            // Column30
+            // 
+            this.Column30.HeaderText = "вищаОсвіта";
+            this.Column30.Name = "Column30";
+            this.Column30.ReadOnly = true;
+            // 
+            // Column31
+            // 
+            this.Column31.HeaderText = "Стать";
+            this.Column31.Name = "Column31";
+            this.Column31.ReadOnly = true;
+            // 
             // tp_ShowWorking
             // 
             this.tp_ShowWorking.BackColor = System.Drawing.Color.Honeydew;
@@ -1518,6 +1631,7 @@
             this.інформаціяПроКористувачаToolStripMenuItem.Name = "інформаціяПроКористувачаToolStripMenuItem";
             this.інформаціяПроКористувачаToolStripMenuItem.Size = new System.Drawing.Size(286, 26);
             this.інформаціяПроКористувачаToolStripMenuItem.Text = "Інформація про користувача";
+            this.інформаціяПроКористувачаToolStripMenuItem.Click += new System.EventHandler(this.інформаціяПроКористувачаToolStripMenuItem_Click);
             // 
             // інформаціяПроРозробникаToolStripMenuItem
             // 
@@ -1787,6 +1901,39 @@
             this.pnl_ShowReports.Size = new System.Drawing.Size(29, 34);
             this.pnl_ShowReports.TabIndex = 23;
             // 
+            // btn_NumOfContracts
+            // 
+            this.btn_NumOfContracts.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn_NumOfContracts.Location = new System.Drawing.Point(13, 175);
+            this.btn_NumOfContracts.Name = "btn_NumOfContracts";
+            this.btn_NumOfContracts.Size = new System.Drawing.Size(160, 61);
+            this.btn_NumOfContracts.TabIndex = 11;
+            this.btn_NumOfContracts.Text = "Контрактів укладено";
+            this.btn_NumOfContracts.UseVisualStyleBackColor = true;
+            this.btn_NumOfContracts.Click += new System.EventHandler(this.btn_NumOfContracts_Click);
+            // 
+            // btn_PaymentOfWorkers
+            // 
+            this.btn_PaymentOfWorkers.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn_PaymentOfWorkers.Location = new System.Drawing.Point(13, 105);
+            this.btn_PaymentOfWorkers.Name = "btn_PaymentOfWorkers";
+            this.btn_PaymentOfWorkers.Size = new System.Drawing.Size(160, 61);
+            this.btn_PaymentOfWorkers.TabIndex = 10;
+            this.btn_PaymentOfWorkers.Text = "Зарплата працівників";
+            this.btn_PaymentOfWorkers.UseVisualStyleBackColor = true;
+            this.btn_PaymentOfWorkers.Click += new System.EventHandler(this.btn_PaymentOfWorkers_Click);
+            // 
+            // btn_ShowDaysWorkedAndLeft
+            // 
+            this.btn_ShowDaysWorkedAndLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn_ShowDaysWorkedAndLeft.Location = new System.Drawing.Point(12, 43);
+            this.btn_ShowDaysWorkedAndLeft.Name = "btn_ShowDaysWorkedAndLeft";
+            this.btn_ShowDaysWorkedAndLeft.Size = new System.Drawing.Size(160, 50);
+            this.btn_ShowDaysWorkedAndLeft.TabIndex = 9;
+            this.btn_ShowDaysWorkedAndLeft.Text = "Дні на посаді";
+            this.btn_ShowDaysWorkedAndLeft.UseVisualStyleBackColor = true;
+            this.btn_ShowDaysWorkedAndLeft.Click += new System.EventHandler(this.btn_ShowDaysWorkedAndLeft_Click);
+            // 
             // dgw_ShowReports
             // 
             this.dgw_ShowReports.AllowUserToAddRows = false;
@@ -1814,152 +1961,6 @@
             this.btn_Back2MainSowRep.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btn_Back2MainSowRep.UseVisualStyleBackColor = false;
             this.btn_Back2MainSowRep.Click += new System.EventHandler(this.btn_Back2MainSowRep_Click);
-            // 
-            // btn_ShowDaysWorkedAndLeft
-            // 
-            this.btn_ShowDaysWorkedAndLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btn_ShowDaysWorkedAndLeft.Location = new System.Drawing.Point(12, 43);
-            this.btn_ShowDaysWorkedAndLeft.Name = "btn_ShowDaysWorkedAndLeft";
-            this.btn_ShowDaysWorkedAndLeft.Size = new System.Drawing.Size(160, 50);
-            this.btn_ShowDaysWorkedAndLeft.TabIndex = 9;
-            this.btn_ShowDaysWorkedAndLeft.Text = "Дні на посаді";
-            this.btn_ShowDaysWorkedAndLeft.UseVisualStyleBackColor = true;
-            this.btn_ShowDaysWorkedAndLeft.Click += new System.EventHandler(this.btn_ShowDaysWorkedAndLeft_Click);
-            // 
-            // btn_PaymentOfWorkers
-            // 
-            this.btn_PaymentOfWorkers.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btn_PaymentOfWorkers.Location = new System.Drawing.Point(13, 105);
-            this.btn_PaymentOfWorkers.Name = "btn_PaymentOfWorkers";
-            this.btn_PaymentOfWorkers.Size = new System.Drawing.Size(160, 61);
-            this.btn_PaymentOfWorkers.TabIndex = 10;
-            this.btn_PaymentOfWorkers.Text = "Зарплата працівників";
-            this.btn_PaymentOfWorkers.UseVisualStyleBackColor = true;
-            this.btn_PaymentOfWorkers.Click += new System.EventHandler(this.btn_PaymentOfWorkers_Click);
-            // 
-            // btn_NumOfContracts
-            // 
-            this.btn_NumOfContracts.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btn_NumOfContracts.Location = new System.Drawing.Point(13, 175);
-            this.btn_NumOfContracts.Name = "btn_NumOfContracts";
-            this.btn_NumOfContracts.Size = new System.Drawing.Size(160, 61);
-            this.btn_NumOfContracts.TabIndex = 11;
-            this.btn_NumOfContracts.Text = "Контрактів укладено";
-            this.btn_NumOfContracts.UseVisualStyleBackColor = true;
-            this.btn_NumOfContracts.Click += new System.EventHandler(this.btn_NumOfContracts_Click);
-            // 
-            // dgw_WorkersFireWorker
-            // 
-            this.dgw_WorkersFireWorker.AllowUserToAddRows = false;
-            this.dgw_WorkersFireWorker.AllowUserToDeleteRows = false;
-            this.dgw_WorkersFireWorker.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgw_WorkersFireWorker.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column25,
-            this.Column26,
-            this.Column27,
-            this.Column28,
-            this.Column29,
-            this.Column30,
-            this.Column31});
-            this.dgw_WorkersFireWorker.Location = new System.Drawing.Point(0, 169);
-            this.dgw_WorkersFireWorker.Name = "dgw_WorkersFireWorker";
-            this.dgw_WorkersFireWorker.ReadOnly = true;
-            this.dgw_WorkersFireWorker.RowTemplate.Height = 24;
-            this.dgw_WorkersFireWorker.Size = new System.Drawing.Size(788, 239);
-            this.dgw_WorkersFireWorker.TabIndex = 0;
-            this.dgw_WorkersFireWorker.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgw_WorkersFireWorker_CellContentClick);
-            // 
-            // tb_WorkersFireWorkerID
-            // 
-            this.tb_WorkersFireWorkerID.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tb_WorkersFireWorkerID.Location = new System.Drawing.Point(383, 50);
-            this.tb_WorkersFireWorkerID.Name = "tb_WorkersFireWorkerID";
-            this.tb_WorkersFireWorkerID.Size = new System.Drawing.Size(138, 34);
-            this.tb_WorkersFireWorkerID.TabIndex = 1;
-            this.tb_WorkersFireWorkerID.TextChanged += new System.EventHandler(this.tb_WorkersFireWorkerID_TextChanged);
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label29.Location = new System.Drawing.Point(160, 53);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(194, 29);
-            this.label29.TabIndex = 2;
-            this.label29.Text = "Код працівника";
-            // 
-            // btn_FireWorker
-            // 
-            this.btn_FireWorker.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btn_FireWorker.Location = new System.Drawing.Point(165, 105);
-            this.btn_FireWorker.Name = "btn_FireWorker";
-            this.btn_FireWorker.Size = new System.Drawing.Size(147, 42);
-            this.btn_FireWorker.TabIndex = 3;
-            this.btn_FireWorker.Text = "Звільнити";
-            this.btn_FireWorker.UseVisualStyleBackColor = true;
-            this.btn_FireWorker.Click += new System.EventHandler(this.btn_FireWorker_Click);
-            // 
-            // Column25
-            // 
-            this.Column25.HeaderText = "кодКадру";
-            this.Column25.Name = "Column25";
-            this.Column25.ReadOnly = true;
-            // 
-            // Column26
-            // 
-            this.Column26.HeaderText = "Прізвище";
-            this.Column26.Name = "Column26";
-            this.Column26.ReadOnly = true;
-            // 
-            // Column27
-            // 
-            this.Column27.HeaderText = "Ім\'я";
-            this.Column27.Name = "Column27";
-            this.Column27.ReadOnly = true;
-            // 
-            // Column28
-            // 
-            this.Column28.HeaderText = "поБатькові";
-            this.Column28.Name = "Column28";
-            this.Column28.ReadOnly = true;
-            // 
-            // Column29
-            // 
-            this.Column29.HeaderText = "датаНародження";
-            this.Column29.Name = "Column29";
-            this.Column29.ReadOnly = true;
-            // 
-            // Column30
-            // 
-            this.Column30.HeaderText = "вищаОсвіта";
-            this.Column30.Name = "Column30";
-            this.Column30.ReadOnly = true;
-            // 
-            // Column31
-            // 
-            this.Column31.HeaderText = "Стать";
-            this.Column31.Name = "Column31";
-            this.Column31.ReadOnly = true;
-            // 
-            // lbl_Worker4FirePicked
-            // 
-            this.lbl_Worker4FirePicked.AutoSize = true;
-            this.lbl_Worker4FirePicked.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lbl_Worker4FirePicked.Location = new System.Drawing.Point(222, 14);
-            this.lbl_Worker4FirePicked.Name = "lbl_Worker4FirePicked";
-            this.lbl_Worker4FirePicked.Size = new System.Drawing.Size(0, 29);
-            this.lbl_Worker4FirePicked.TabIndex = 4;
-            // 
-            // btn_ClearChoice4Fire
-            // 
-            this.btn_ClearChoice4Fire.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btn_ClearChoice4Fire.Location = new System.Drawing.Point(339, 105);
-            this.btn_ClearChoice4Fire.Name = "btn_ClearChoice4Fire";
-            this.btn_ClearChoice4Fire.Size = new System.Drawing.Size(224, 42);
-            this.btn_ClearChoice4Fire.TabIndex = 5;
-            this.btn_ClearChoice4Fire.Text = "Очистити вибір";
-            this.btn_ClearChoice4Fire.UseVisualStyleBackColor = true;
-            this.btn_ClearChoice4Fire.Click += new System.EventHandler(this.btn_ClearChoice4Fire_Click);
             // 
             // MainForm
             // 
@@ -2000,6 +2001,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgw_NonHiredPositions)).EndInit();
             this.tp_FireWorker.ResumeLayout(false);
             this.tp_FireWorker.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgw_WorkersFireWorker)).EndInit();
             this.tp_ShowWorking.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgw_ShowWorkingNow)).EndInit();
             this.pnl_Position.ResumeLayout(false);
@@ -2024,7 +2026,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgw_Search)).EndInit();
             this.pnl_ShowReports.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgw_ShowReports)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgw_WorkersFireWorker)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

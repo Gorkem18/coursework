@@ -116,6 +116,7 @@ namespace Interface
             tmr_ClearStatus.Enabled = true;
             інформаціяПроКористувачаToolStripMenuItem.Enabled = true;
             tsmi_Refresh.Enabled = true;
+            інформаціяПроКористувачаToolStripMenuItem.Enabled = true;
 
             DBconnect();
         }
@@ -777,13 +778,26 @@ namespace Interface
 
                 string[] qAddRegisters2Table = new string[size];
 
-                while(reader.Read())
+                string qAddWorker2Archive = "use humanrecourcesdepartment insert into Архів ( кодкадру, прізвище, ім_я," +
+                    " побатькові, датанародження, вищаосвіта, стать, датазвільнення)" +
+                    " values( " + fireWorker.Cells[0].Value + ", '" + fireWorker.Cells[1].Value +
+                    "', '" + fireWorker.Cells[2].Value + "', '" + fireWorker.Cells[3].Value +
+                    "', '" + fireWorker.Cells[4].Value + "', '" + fireWorker.Cells[5].Value +
+                    "', '" + fireWorker.Cells[6].Value + "', '" + DateTime.Now.Date + "')";
+                SqlCommand cmdAdd2Arch = new SqlCommand(qAddWorker2Archive, connect);
+                cmdAdd2Arch.ExecuteNonQuery();  //worker added to archive
+
+                string qDelWorkerWorker = "use humanrecourcesdepartment delete from кадри where кодКадру = " + fireWorker.Cells[0].Value;
+                SqlCommand cmdDelFromWorker = new SqlCommand(qDelWorkerWorker, connect);
+                cmdDelFromWorker.ExecuteNonQuery(); //worker deleted
+
+                while (reader.Read())
                 {
                     qAddRegisters2Table[i] = "insert into РеєстраціїЗвільненихПрацівників(кодРеєстрації, кодКадру, кодПосади, Ставка, датаЗатвердження, датаЗакінченняКонтракту) " +
                         "values(" + reader[0] + ", " + reader[1] + ", " + reader[2] + ", " + reader[3] + ", '" + reader[4] + "', " +
                         "'" + reader[5] + "')";
                     i++;
-                }
+                }   //registrations added
 
                 reader.Close();
 
@@ -795,21 +809,11 @@ namespace Interface
 
                 string qDelWorkersRegistr = "use humanrecourcesdepartment delete from Реєстрація where кодКадру = " + fireWorker.Cells[0].Value;
                 SqlCommand cmdDelRegistr = new SqlCommand(qDelWorkersRegistr, connect);
-                cmdDelRegistr.ExecuteNonQuery();
+                cmdDelRegistr.ExecuteNonQuery();    //registrations deleted
 
-                string qAddWorker2Archive = "use humanrecourcesdepartment insert into Архів ( кодкадру, прізвище, ім_я," +
-                    " побатькові, датанародження, вищаосвіта, стать, датазвільнення)" +
-                    " values( " + fireWorker.Cells[0].Value + ", '" + fireWorker.Cells[1].Value +
-                    "', '" + fireWorker.Cells[2].Value + "', '" + fireWorker.Cells[3].Value +
-                    "', '" + fireWorker.Cells[4].Value + "', '" + fireWorker.Cells[5].Value +
-                    "', '" + fireWorker.Cells[6].Value + "', '" + DateTime.Now.Date + "')";
+                
 
-                SqlCommand cmdAdd2Arch = new SqlCommand(qAddWorker2Archive, connect);
-                cmdAdd2Arch.ExecuteNonQuery();
-
-                string qDelWorkerWorker = "use humanrecourcesdepartment delete from кадри where кодКадру = " + fireWorker.Cells[0].Value;
-                SqlCommand cmdDelFromWorker = new SqlCommand(qDelWorkerWorker, connect);
-                cmdDelFromWorker.ExecuteNonQuery();
+                
 
                 tb_WorkersFireWorkerID.Text = "";
                 ts_StatusLabel.Text = "Працівника звільнено";
@@ -819,6 +823,11 @@ namespace Interface
             {
                 btn_ClearChoice4Fire_Click(null, null);
             }
+        }
+
+        private void інформаціяПроКористувачаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Підключено до бази даних: HumanRecourcesDepartment Користувач: snow ");
         }
     }
 }
